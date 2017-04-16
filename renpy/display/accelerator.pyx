@@ -1,5 +1,5 @@
 #cython: profile=False
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -25,12 +25,15 @@ import math
 from renpy.display.render cimport Render, Matrix2D, render
 from renpy.display.core import absolute
 
+from sdl2 cimport *
+from pygame_sdl2 cimport *
+
+import_pygame_sdl2()
 
 ################################################################################
 # Surface copying
 ################################################################################
 
-from pygame cimport *
 
 def nogil_copy(src, dest):
     """
@@ -43,16 +46,9 @@ def nogil_copy(src, dest):
     src_surf = PySurface_AsSurface(src)
     dest_surf = PySurface_AsSurface(dest)
 
-    old_alpha = src_surf.flags & SDL_SRCALPHA
-
-    if old_alpha:
-        SDL_SetAlpha(src_surf, 0, 255)
-
     with nogil:
-        SDL_BlitSurface(src_surf, NULL, dest_surf, NULL)
-
-    if old_alpha:
-        SDL_SetAlpha(src_surf, SDL_SRCALPHA, 255)
+        SDL_SetSurfaceBlendMode(src_surf, SDL_BLENDMODE_NONE)
+        SDL_UpperBlit(src_surf, NULL, dest_surf, NULL)
 
 ################################################################################
 # Transform render function

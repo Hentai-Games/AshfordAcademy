@@ -29,6 +29,7 @@ cdef class Environ
 cdef class GLDraw:
 
     cdef bint did_init
+    cdef bint did_texture_test
     cdef Environ environ
     cdef public object rtt
     cdef object window
@@ -59,7 +60,7 @@ cdef class GLDraw:
     cpdef int draw_render_textures(
         GLDraw self,
         object what,
-        bint non_aligned)
+        bint non_aligned) except 1
 
     cpdef int draw_transformed(
         GLDraw self,
@@ -70,7 +71,7 @@ cdef class GLDraw:
         double alpha,
         double over,
         render.Matrix2D reverse,
-        bint nearest)
+        bint nearest) except 1
 
 cdef class Environ:
     cdef void blit(self)

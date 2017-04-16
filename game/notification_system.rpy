@@ -49,7 +49,7 @@ init python:
 
 
 screen mailbox:
-    
+
     add "images/ui/phone_bg.jpg" xalign 0.5 yalign 1.0
     tag menu
     modal True
@@ -91,7 +91,7 @@ screen mailbox:
                 vbar value YScrollValue("view_message")
             use mailbox_commands
     add "images/ui/phone.png" xalign 0.5 yalign 1.0
-    
+
 screen mailbox_commands:
     hbox:
         if current_message and current_message.can_reply:

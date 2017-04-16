@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -22,7 +22,7 @@
 # This file is responsible for joystick support in Ren'Py.
 
 import os
-import pygame
+import pygame_sdl2 as pygame
 
 import renpy.display
 
@@ -49,7 +49,13 @@ def init():
         pygame.joystick.init()
 
         for i in range(0, pygame.joystick.get_count()):
-            pygame.joystick.Joystick(i).init()
+            js = pygame.joystick.Joystick(i)
+            js.init()
+
+            if "accelerometer" in js.get_name().lower():
+                js.quit()
+                continue
+
             enabled = True
     except:
         if renpy.config.debug:

@@ -11,7 +11,7 @@ screen new_game_plus:
     imagemap:
         ground persistent.mod_custom_title_screen_ground
 
-    grid 3 1:
+    grid 3 2:
         style_group "prefs"
         xfill True
 
@@ -22,7 +22,7 @@ screen new_game_plus:
                 vbox:
                     label _("Sex")
                     for gender in povGenders:
-                        textbutton _(gender) action SetVariable("povGender", gender)
+                        textbutton _(gender.capitalize()) action SetVariable("povGender", gender)
             frame:
                 vbox:
                     label _("Title")
@@ -40,8 +40,15 @@ screen new_game_plus:
                 has vbox
                 label _("Difficulty")
                 for difficulty in difficulties:
-                    textbutton _(difficulty) action SetVariable("game_mode", difficulty)
+                    textbutton _(difficulty.capitalize()) action SetVariable("game_mode", difficulty)
 
+            frame:
+                style_group "pref"
+                has vbox
+                vbox:
+                    label _("Game length")
+                    for length in length_options:
+                        textbutton _(length['text']) action SetVariable("game_length", length['length'])
         vbox:
             label _("{b}Content settings{/b}")
             frame:
@@ -52,8 +59,12 @@ screen new_game_plus:
                     textbutton _("Enabled") action SetVariable("new_game_plus", True)
                     textbutton _("Disabled") action SetVariable("new_game_plus", False)
 
-            frame:
-                textbutton _("Start") action Start("new_game_plus")
+        vbox:
+            pass
+        vbox:
+            pass
+        vbox:
+            textbutton _("Start") action Start("new_game_plus")
 
 init -2 python:
     style.pref_frame.xfill = True

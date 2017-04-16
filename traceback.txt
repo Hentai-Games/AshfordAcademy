@@ -1,0 +1,34 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/main.rpy", line 243, in script call
+    call events_run_period from _call_events_run_period_2
+  File "game/event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/mods/Scorp1/Scorp_Class1.rpy", line 348, in script call
+    "They all get an A."
+  File "renpy/common/00console.rpy", line 604, in script call
+    python in _console:
+ScriptError: could not find label 'new_day'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/main.rpy", line 243, in script call
+    call events_run_period from _call_events_run_period_2
+  File "game/event_dispatcher.rpy", line 297, in script call
+    call expression _event from call_expression_event_1
+  File "game/mods/Scorp1/Scorp_Class1.rpy", line 348, in script call
+    "They all get an A."
+  File "renpy/common/00console.rpy", line 604, in script call
+    python in _console:
+  File "<string>", line 1, in script
+  File "H:\Download\new\Ashford_Academy-all\renpy\ast.py", line 1480, in execute
+    rv = renpy.game.script.lookup(target)
+  File "H:\Download\new\Ashford_Academy-all\renpy\script.py", line 602, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'new_day'.
+
+Windows-8-6.2.9200
+Ren'Py 6.99.1.329
+Ashford Academy 15.05.09

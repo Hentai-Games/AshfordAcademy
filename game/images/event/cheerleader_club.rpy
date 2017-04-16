@@ -6,3 +6,5 @@ image cheerleader_club4-1       = "images/event/cheerleader_club/cheerleader_clu
 image cheerleader_club4-2       = "images/event/cheerleader_club/cheerleader_club4-2.jpg"
 image cheerleader_club5         = "images/event/cheerleader_club/cheerleader_club5.jpg"
 image cheerleader_club6         = "images/event/cheerleader_club/cheerleader_club6.jpg"
+image cheerleader_club7         = "images/event/cheerleader_club/cheerleader_club7.jpg"
+image cheerleader_club8         = "images/event/cheerleader_club/cheerleader_club8.jpg"

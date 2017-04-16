@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -104,6 +104,9 @@ class ImageReference(renpy.display.core.Displayable):
         super(ImageReference, self).__init__(**properties)
 
         self.name = name
+
+    def __unicode__(self):
+        return u"<ImageReference {!r}>".format(self.name)
 
     def __hash__(self):
         return hash(self.name)
@@ -310,6 +313,13 @@ class ShownImageInfo(renpy.object.Object):
                 return False
 
         return True
+
+    def get_showing_tags(self, layer):
+        """
+        Returns the set of tags being shown on `layer`.
+        """
+
+        return { t for l, t in self.shown if l == layer }
 
     def predict_scene(self, layer):
         """

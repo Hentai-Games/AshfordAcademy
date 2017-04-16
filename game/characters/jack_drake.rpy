@@ -190,7 +190,7 @@ label office_introduction_female:
 label jack_drake_office:
 
     scene bg office with fade
-
+    $ tmp_var = False
     if renpy.random.randint(1,2) == 1:
         "While doing some mundane paperwork your office doors suddenly open."
     else:
@@ -208,7 +208,7 @@ label jack_drake_office:
         jack_drake "So what's up [povFirstName]?"
     else:
         jack_drake "So... What's up [jack_drake_pov_nickname]?"
-    pov "Some old, how about you?"
+    pov "Same old, how about you?"
     jack_drake "Naah, I'm just taking a break from all the teachin' stuff. It's a tad tiring you know."
     if deviance > 95 and inhibition < 5 and academics > 95 and behavior > 95:
         show jack_drake smile
@@ -227,7 +227,6 @@ label jack_drake_office:
     elif academics >= 100:
         show jack_drake normal_blink
         jack_drake "Hey, this is bullocks! These kids are asking me about {i}AdS/CFT correspondence{/i}- what?! it's not like we study quark–gluon plasma! Who cares?! Give me a break man!"
-        $ tmp_var = 'true'
     elif academics > 90:
         show jack_drake normal_blink
         jack_drake "Teachin' these young geniuses forces me to keep up and research every fuckin' field. Just the other they I had to explain {i}string theory's{/i} relation with {i}Everett's many worlds theory{/i}."
@@ -242,9 +241,9 @@ label jack_drake_office:
         jack_drake "They might be stupid as hell but they are still makin' me work like a horse. "
     pov "Sure sounds like it could be worse, Jack."
     show jack_drake normal
-    if tmp_var == 'true':
+    if tmp_var == True:
         jack_drake "WHAT!? Do you even know what anti-de Sitter/conformal field theory correspondence is? Seriously."
-        $ tmp_var = 'false'
+        $ tmp_var = False
     else:
         jack_drake "Yeah, you're right mate, but still..."
     return

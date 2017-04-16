@@ -2,7 +2,7 @@ init -1 python hide:
 ###############################################
 #               Ashford Academy
 #               Version:
-    config.version = "15.01.25"
+    config.version = "15.05.09"
     config.developer = True
     config.rollback_enabled = False
 #
@@ -13,8 +13,8 @@ init -1 python hide:
 define povFirstName = ""
 define povLastName = ""
 define povName = ""                             # povName = povFirstName + povLastName
-define povGenders = ["Male", "Female", "Futa"]
-define povGender = "Male"
+define povGenders = ["male", "female", "futa"]
+define povGender = "male"
 define povTitles = ["Mr.", "Mrs."]
 define povTitle = "Mr."
 define povBdsmTitles = ["Master", "Mistress"]
@@ -23,8 +23,11 @@ define pov = DynamicCharacter("povName", color=(150, 0, 32, 255))
 define game_mode = "normal"
 
 init python:
-    # Load/Import library "Math", it's used in some calculations such as "pay_day".
+    # Library "Math", it's used in some calculations such as "pay_day" and the "gallery".
+    # Library "Time" is used in the "gallery".
+    # Library "datetime" is used for christmas countdown events.
     import math
+    import time
     import datetime
 
     # For mods - How to add new Gender & Title
@@ -35,6 +38,7 @@ init python:
     new_game_plus = False
     start_day_with_gin = False
 
+    # TODO: How we handle stat/inhibition minimum/maximum should be changed.
     inhibition_min = 75
     lower_inhibition_level = 1
 
@@ -44,42 +48,27 @@ init python:
     reply_screen = False
 
     if persistent.mod_disable_original_stats == False:
-        # Stats that will be shown on the GUI
-        register_stat("Morale", "morale", 0, 5, 100)
-        register_stat("Behavior", "behavior", 5, 0, 100)
-        register_stat("Academics", "academics", 10, 0, 100)
-        register_stat("Artistery", "artistery", 10, 0, 100)
-        register_stat("Athletics", "athletics", 10, 0, 100)
-        register_stat("Deviance", "deviance", 0, 0, 100)
-        register_stat("Inhibition", "inhibition", 75, 100, 100)
-
-    # Stats - Old Orbs
-    red_orb = 0
-    blue_orb = 0
-    green_orb = 0
-    yellow_orb = 0
-    # Stats - New Orbs
-    orb_morale = 0
-    orb_behavior = 0
-    orb_academics = 0
-    orb_artistry = 0    # NOTE: Name "artistry" NOT artistery
-    orb_athletics = 0
-    orb_deviance = 0
-    orb_inhibition = 0
+        # Stats that will be shown on the GUI, all stats will also need a *_change stat. TODO: There is a better way to handle/auto generate these.
+        register_stat("Morale",     "morale",       0, 5, 100)
+        register_stat("Behavior",   "behavior",     5, 0, 100)
+        register_stat("Academics",  "academics",    10, 0, 100)
+        register_stat("Artistery",  "artistery",    10, 0, 100)
+        register_stat("Athletics",  "athletics",    10, 0, 100)
+        register_stat("Deviance",   "deviance",     0, 0, 100)
+        register_stat("Inhibition", "inhibition",   75, 100, 100)
 
     # Here we set up the default values for the day planner.
-
-    morning_act = None
-    afternoon_act = None
-    evening_act = None
+    morning_act     = None
+    afternoon_act   = None
+    evening_act     = None
 
 ########################################################
 #   This will most likely be moved at some point in time
 
     # Image dissolve Transitions.
-    circleirisout = ImageDissolve("images/ui/transitions/circleiris.png", 1.0, 8)
-    circleirisin = ImageDissolve("images/ui/transitions/circleiris.png", 1.0, 8, reverse=True)
-    flash = Fade(.25, 0, .75, color="#fff")
+    circleirisout   = ImageDissolve("images/ui/transitions/circleiris.png", 1.0, 8)
+    circleirisin    = ImageDissolve("images/ui/transitions/circleiris.png", 1.0, 8, reverse=True)
+    flash           = Fade(.25, 0, .75, color="#fff")
     # Content options - can be changed in the options screen. Will be used mostly for third-party content.
     persistent.content_list = dict(googirls=False, tentacles=False, catgirls=False, loli=False)
 
@@ -93,6 +82,8 @@ init python:
             dp_choice("Sports field", "sports_field")
         if (building_gym > 0):
             dp_choice("Gym", "gym")
+        if (building_library > 0):
+            dp_choice("Library", "library")
 
         dp_period("Afternoon", "afternoon_act")
         dp_choice("Class", "class",)
@@ -105,10 +96,10 @@ init python:
         dp_choice("School grounds", "school_grounds")
         if (building_dormitory > 0):
             dp_choice("Dormitory", "dormitory")
-        if (building_library > 0):
-            dp_choice("Library", "library")
         if (building_bath > 0):
             dp_choice("Bath", "bath")
+        if (building_club_rooms > 0):
+            dp_choice("After school Clubs", "club_rooms")
         return
 
 
@@ -160,10 +151,11 @@ label day:
     # Default school background.
     scene Ashford_Academy with circleirisout
 
-    $ today = weekday_name[planning_day]
+
     $ act = 'new_day'
+    $ today = weekday_name[total_days%7]
     $ normalize_stats()
-    call events_run_period
+    call events_run_period from _call_events_run_period
 
 #
 # Here ends the story and game over stuff.
@@ -187,7 +179,7 @@ label day:
     # Now, we call the day planner, which may set the act variables
     # to new values. We call it with a list of periods that we want
     # to compute the values for.
-    call day_planner(["Morning", "Afternoon", "Evening"])
+    call day_planner(["Morning", "Afternoon", "Evening"]) from _call_day_planner
 
 
     # We process each of the three periods of the day, in turn.
@@ -208,21 +200,6 @@ label morning:
         reputation_change = reputation
         population_change = population
 
-        # New orbs
-        orb_morale_change = orb_morale
-        orb_behavior_change = orb_behavior
-        orb_academics_change = orb_academics
-        orb_artistry_change = orb_artistry
-        orb_athletics_change = orb_athletics
-        orb_deviance_change = orb_deviance
-        orb_inhibition_change = orb_inhibition
-
-        # Old Orbs - TODO: Remove!
-        red_orb_change = red_orb
-        blue_orb_change = blue_orb
-        green_orb_change = green_orb
-        yellow_orb_change = yellow_orb
-
     # Tell the user what period it is.
     scene black with fade
     if(year > 1):
@@ -239,7 +216,7 @@ label morning:
     $ normalize_stats()
 
     # Execute the events for the morning.
-    call events_run_period
+    call events_run_period from _call_events_run_period_1
 
     # That's it for the morning, so we fall through to the afternoon.
 
@@ -263,7 +240,7 @@ label afternoon:
 
     $ normalize_stats()
 
-    call events_run_period
+    call events_run_period from _call_events_run_period_2
 
 
 label evening:
@@ -283,7 +260,7 @@ label evening:
 
     $ normalize_stats()
 
-    call events_run_period
+    call events_run_period from _call_events_run_period_3
 
 
 label night:
@@ -295,8 +272,8 @@ label night:
     centered "Night"
 
     $ act = 'night'
-    call events_run_period
-    call events_end_day
+    call events_run_period from _call_events_run_period_4
+    call events_end_day from _call_events_end_day
     $ normalize_stats()
 
     # And we jump back to day to start the next day. This goes
@@ -320,4 +297,3 @@ label after_load:
     $ setDayPlannerChoices()
 
     return
-

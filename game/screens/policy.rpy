@@ -3,6 +3,8 @@
 #
 # Show policy screen and options.
 
+define policy_screen = "student_rules"
+
 screen policy_screen:
     imagemap:
         ground "images/ui/menu_bg.png"
@@ -12,14 +14,14 @@ screen policy_screen:
         yfill True
         vbox:
             python:
-                ui.imagebutton("images/ui/student_rules_idle.png", "images/ui/student_rules_hover.png", insensitive_image="images/ui/menubutton_disable.png", clicked=[SetVariable("policy_screen", "student_rules")])
-                ui.imagebutton("images/ui/learning_materials_idle.png", "images/ui/learning_materials_hover.png", insensitive_image="images/ui/menubutton_disable.png", clicked=[SetVariable("policy_screen", "learning_materials")])
+                ui.imagebutton("images/ui/student_rules_idle.png", "images/ui/student_rules_hover.png", clicked=[SetVariable("policy_screen", "student_rules")])
+                ui.imagebutton("images/ui/learning_materials_idle.png", "images/ui/learning_materials_hover.png", clicked=[SetVariable("policy_screen", "learning_materials")])
 
         vbox:
             xfill True
             xpos 0.008
             ypos 0.008
-                        
+
             if policy_screen == "learning_materials":
                 label _("Depiction of the human body")
                 if(hyper_anatomic_body > 0 ):
@@ -37,7 +39,7 @@ screen policy_screen:
                 label _("Salary - Here you can adjust the salary of your teachers.")
                 textbutton _("High salary - Teachers get a significant salary boost.") action [SetVariable("salary", "salary_high"), SetVariable("salary_skill_multiplier", 1.7)] xminimum 800
                 textbutton _("Normal salary - Normal teacher salary used at other schools.") action [SetVariable("salary", "salary_normal"), SetVariable("salary_skill_multiplier", 1.2)] xminimum 800
-                textbutton _("Low salary - Teachers get paid a bit less then normal.") action [SetVariable("salary", "salary_low"), SetVariable("salary_skill_multiplier", 0.7)] xminimum 800
+                textbutton _("Low salary - Teachers get paid less then normal.") action [SetVariable("salary", "salary_low"), SetVariable("salary_skill_multiplier", 0.7)] xminimum 800
 
             elif policy_screen == "student_rules":
                 label _("Entrance requirements - The requirements to be accepted to your school.")
@@ -73,9 +75,6 @@ screen policy_screen:
                 textbutton _("Physical abuse - Teachers are allowed to use moderate violence.") action [SetVariable("behavior_rules", "behavior_physical"), SetVariable("behavior_rules_multiplier", 1.5)] xminimum 800
                 textbutton _("Verbal abuse - Verbal and non physical abuse are allowed.") action [SetVariable("behavior_rules", "behavior_verbal"), SetVariable("behavior_rules_multiplier", 1)] xminimum 800
                 textbutton _("Zero tolerance - No kind of aggression towards students are allowed.") action [SetVariable("behavior_rules", "behavior_zero"), SetVariable("behavior_rules_multiplier", 0.6)] xminimum 800
-
-            else:
-                text "Here you choose what rules your students and teachers should follow."
     vbox:
         xalign 0.992
         yalign 0.992

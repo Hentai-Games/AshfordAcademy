@@ -1,8 +1,7 @@
-image phone1 = "locations/splash/phone1.jpg"
-image phone2 = "locations/splash/phone2.jpg"
+image phone1 = "images/splash/phone1.jpg"
+image phone2 = "images/splash/phone2.jpg"
 
 init python:
-
     # Story Variables
     first_week = True
     extroduce_jennifer_adriano = False
@@ -12,11 +11,11 @@ init:
     if persistent.mod_disable_original_events == False:
         # New day events:
         $ event("jennifer_adriano_introduction", "act == 'new_day' and first_week == False", event.choose_one('new_day'), event.once())
-        
+
         # Night events:
         $ event("jennifer_adriano_extroduction", "act == 'night' and planning_day == 5", event.depends("jennifer_adriano_introduction"), event.once(), priority=40)
         $ event("interrogation", "act == 'night' and planning_day == 5", event.choose_one('night'), event.depends("jennifer_adriano_extroduction"), event.once())
-        
+
         # Other events:
         $ event("adaki_school_grounds", "act == 'school_grounds'", event.choose_one('school_grounds'), event.depends("interrogation"), event.once())
         $ event("susan_marina_regarding_adaki", "act == 'office'", event.choose_one('office'), event.depends("adaki_school_grounds"), event.once())
@@ -67,7 +66,7 @@ label new_game_story:
 
 
 label jennifer_adriano_introduction:
-    
+
     scene Ashford_Academy with circleirisout
     "You remember what Susan said so you decide to go and meet you new secretary."
     scene office with fade
@@ -78,7 +77,7 @@ label jennifer_adriano_introduction:
     pov "I'm sure you will. Just take your time and get acquainted with the principles."
     jennifer_adriano "Yes sir!"
 #    jump day
-    call events_skip_period
+    call events_skip_period from _call_events_skip_period_2
     return
 
 label jennifer_adriano_extroduction:
@@ -110,8 +109,7 @@ label jennifer_adriano_extroduction:
     dr_kent "Once again, you have my condolences."
     pov "Thank you."
     $ extroduce_jennifer_adriano = True
-#    jump normal_night
-    call events_skip_period
+    call events_skip_period from _call_events_skip_period_3
     return
 
 label interrogation:
@@ -168,8 +166,7 @@ label interrogation:
     officer_adaki "As soon as you've given your prints to my assistant, you're free as a bird."
     scene black with fade
     "They take your fingerprints and have you sign some papers before you take a cab home again."
-#    jump normal_night
-    call events_skip_period
+    call events_skip_period from _call_events_skip_period_4
     return
 
 

@@ -1,13 +1,14 @@
-Hibari
 Abbie
 Abelia
 Ada
 Ai
 Alexia
+Alexis
 Allison
 Ally
 Amanda
 Amber
+Ami
 Amy
 Anabelle
 Anna
@@ -17,12 +18,15 @@ Apricot
 Asia
 Aspen
 Astrid
+Song
+Ava
 Aya
 Ayaka
 Ayumi
 Bambi
 Becky
 Bee
+Bree
 Caitlyn
 Cami
 Camilla
@@ -45,6 +49,8 @@ Echo
 Elizabeth
 Elly
 Emiko
+Emily
+Emma
 Emmy
 Eri
 Erica
@@ -53,6 +59,7 @@ Erina
 Eve
 Felica
 Fiona
+Florence
 Frida
 Fumiko
 Geri
@@ -65,6 +72,7 @@ Haruru
 Heather
 Heidi
 Helena
+Hibari
 Hina
 Hinata
 Hiroko
@@ -84,6 +92,7 @@ Jane
 Janna
 Jeane
 Jeannie
+Jennifer
 Jenny
 Jessica
 Jessie
@@ -154,6 +163,7 @@ Mihane
 Miki
 Mikki
 Miku
+Milla
 Millie
 Mindy
 Misa
@@ -205,6 +215,7 @@ Sabrina
 Sakura
 Sam
 Samantha
+Sandra
 Sarah
 Sayumi
 Scarlett
@@ -252,5 +263,7 @@ Yatsuba
 Yi
 Yoko
 Yui
+Yukari
 Yumi
+Zoe
 Zoey

@@ -3,7 +3,7 @@
 #
 # How does it work?
 # $ add_message("Topic", "Sender", "Text content", "attached image", "reply screen")
-# 
+#
 # Some examples:
 #
 # $ add_message("Miss u <3", "Jen", "", "jen_sexy.jpg")
@@ -26,7 +26,7 @@
 #
 #        "Don't reply yet.":
 #            pass
-#    return 
+#    return
 #
 
 init:
@@ -38,7 +38,7 @@ init:
     $ event("NPA_mail4", "disable_NPA == False", event.once(), event.depends("NPA_mail3"))
     $ event("NPA_mail5", "disable_NPA == False", event.once(), event.depends("NPA_mail4"))
     $ event("NPA_mail6", "disable_NPA == False", event.once(), event.depends("NPA_mail5"))
-    
+
     #$ event("jack_drake_mail1", "disable_NPA == False", event.once())
 
 
@@ -60,27 +60,52 @@ label NPA_mail1_reply(current_message):
 
 
 label NPA_mail2:
-    $ add_message("Morale", "N.A.P.", "{b}Morale.{/b} \nThis is the general happiness of the school.\n{i}Are they in high spirits or more doom and gloom.{/i} \n\nAs principals we have great power to influence the daily activity of our students. We can play nice and have lax policies and open up a pool or bath.\nPlease remember, focusing to much on morale will most likely lower their behavior. \n\n-National Association of Principals", "", "NPA_mail1_reply")
+    $ add_message(
+        "Morale",
+        "N.A.P.",
+        "{b}Morale.{/b} \nThis is the general happiness of the school.\n{i}Are they in high spirits or more doom and gloom.{/i} \n\nAs principals we have great power to influence the daily activity of our students. We can play nice and have lax policies and open up a pool or bath.\nPlease remember, focusing to much on morale will most likely lower their behavior. \n\n-National Association of Principals",
+        "",
+        "NPA_mail1_reply")
     return
 
 
 label NPA_mail3:
-    $ add_message("Behavior", "N.A.P.", "{b}Behavior.{/b} \nThis is how obedient your students are.\n{i}Do they act as told or do they terrorize the others?{/i} \n\nAs principals we have great power to influence the daily activity of our students. We can force them do do our bidding and follow our every whim, raise the security and expel those who disobey. \nThat {i}would obviously be immoral{/i} and lower the morale of our students. \n\n-National Association of Principals", "", "NPA_mail1_reply")
+    $ add_message(
+        "Behavior",
+        "N.A.P.",
+        "{b}Behavior.{/b} \nThis is how obedient your students are.\n{i}Do they act as told or do they terrorize the others?{/i} \n\nAs principals we have great power to influence the daily activity of our students. We can force them do do our bidding and follow our every whim, raise the security and expel those who disobey. \nThat {i}would obviously be immoral{/i} and lower the morale of our students. \n\n-National Association of Principals",
+        "",
+        "NPA_mail1_reply")
     return
 
 
 label NPA_mail4:
-    $ add_message("Academics, Artistry & Athletics", "N.A.P.", "{b}Academics, Artistry & Athletics.{/b} \nThese are how good your school is in reference to the national average.\n{i}Does your school have the students of the future?{/i}\n\nTo motivate and better our students we can upgrade and build new buildings as well as give our teachers better salary and equipment by changing the school policy. \n\n-National Association of Principals", "", "NPA_mail1_reply")
+    $ add_message(
+        "Academics, Artistry & Athletics",
+        "N.A.P.",
+        "{b}Academics, Artistry & Athletics.{/b} \nThese are how good your school is in reference to the national average.\n{i}Does your school have the students of the future?{/i}\n\nTo motivate and better our students we can upgrade and build new buildings as well as give our teachers better salary and equipment by changing the school policy. \n\n-National Association of Principals",
+        "",
+        "NPA_mail1_reply")
     return
 
 
 label NPA_mail5:
-    $ add_message("Deviance & Inhibition", "N.A.P.", "{b}Deviance & Inhibition.{/b} \nAs responsible for the students future we have to make sure that our students {i}don't{/i} act deviantly and involve themselves in immoral and sexual behavior. \n\nA good way to keep the students in place is to make sure they act modest and stay away from places like public baths and make sure they dress properly.  \n\n-National Association of Principals", "", "NPA_mail1_reply")
+    $ add_message(
+        "Deviance & Inhibition",
+        "N.A.P.",
+        "{b}Deviance & Inhibition.{/b} \nAs responsible for the students future we have to make sure that our students {i}don't{/i} act deviantly and involve themselves in immoral and sexual behavior. \n\nA good way to keep the students in place is to make sure they act modest and stay away from places like public baths and make sure they dress properly.  \n\n-National Association of Principals",
+        "",
+        "NPA_mail1_reply")
     return
 
 
+    # TODO: We dont use orbs anymore!
 label NPA_mail6:
-    $ add_message("Warning about orbs", "N.A.P.", "{b}Orbs.{/b} \nThere seems to be a rumour going that there could exist some kind of {i}magical orbs{/i} that would make it possible to influence teachers and students alike.\n\nThis is {i}obviously{/i} a ruse and should be avoided at all cost. \nAny sane person would stay away from this and the person(s) claiming involved with this.\n\n-National Association of Principals", "", "NPA_mail1_reply")
+    $ add_message(
+        "Warning about orbs",
+        "N.A.P.",
+        "{b}Orbs.{/b} \nThere seems to be a rumour going that there could exist some kind of {i}magical orbs{/i} that would make it possible to influence teachers and students alike.\n\nThis is {i}obviously{/i} a ruse and should be avoided at all cost. \nAny sane person would stay away from this and the person(s) claiming involved with this.\n\n-National Association of Principals",
+        "",
+        "NPA_mail1_reply")
     return
-
 

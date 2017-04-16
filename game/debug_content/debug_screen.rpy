@@ -2,10 +2,10 @@
     $ dbg_lbl_jump = ""
 
 screen debug_screen:
-    
+
     imagemap:
         ground "images/ui/menu_bg.png"
-    vbox:    
+    vbox:
         null height 20
         hbox:
             null width 20
@@ -36,7 +36,7 @@ screen debug_screen:
                     textbutton "0" action SetVariable("reputation", 0)
                     null height 20
                     textbutton "0" action SetVariable("good_points", 0)
-                    textbutton "0" action SetVariable("evil_points", 0)                    
+                    textbutton "0" action SetVariable("evil_points", 0)
 
                 vbox:
                     textbutton "10" action SetVariable("morale", 10)
@@ -177,7 +177,7 @@ screen debug_screen:
             xalign 0.95
             yalign 0.95
             $ ui.imagebutton("images/ui/return_button_idle.png", "images/ui/return_button_hover.png", insensitive_image="images/ui/menubutton_disable.png", clicked=ui.returns(0))
-        
+
 label dbg_lbl_jmp:
     if renpy.has_label(dbg_lbl_jump):
         hide screen debug_screen
@@ -185,8 +185,7 @@ label dbg_lbl_jmp:
     else:
         "Sorry no such label was found. Try again."
         return
-        
+
 label dbg_lbl_input:
     $ dbg_lbl_jump = renpy.input("Write the label name","")
-    call dbg_lbl_jmp
-
+    call dbg_lbl_jmp from _call_dbg_lbl_jmp

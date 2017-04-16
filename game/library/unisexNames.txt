@@ -8,4 +8,5 @@ Nao
 Naoto
 Shinobu
 Soma
+Sora
 Tomomi

@@ -1,5 +1,5 @@
 #@PydevCodeAnalysisIgnore
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -20,7 +20,10 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-from pygame cimport *
+from sdl2 cimport *
+from pygame_sdl2 cimport *
+import_pygame_sdl2()
+
 from freetype cimport *
 from ttgsubtable cimport *
 from textsupport cimport Glyph, SPLIT_INSTEAD
@@ -369,7 +372,8 @@ cdef class FTFont:
 
             try:
                 if self.stroker != NULL:
-                    FT_Glyph_StrokeBorder(&g, self.stroker, 0, 1)
+                    # FT_Glyph_StrokeBorder(&g, self.stroker, 0, 1)
+                    FT_Glyph_Stroke(&g, self.stroker, 1)
             except:
                 import traceback
                 traceback.print_exc()
@@ -551,7 +555,7 @@ cdef class FTFont:
 
         return x, y, w, h
 
-    def draw(self, pysurf, float xo, int yo, color, list glyphs, bint underline, bint strikethrough, black_color):
+    def draw(self, pysurf, float xo, int yo, color, list glyphs, int underline, bint strikethrough, black_color):
         """
         Draws a list of glyphs to surf, with the baseline starting at x, y.
         """
@@ -645,10 +649,11 @@ cdef class FTFont:
 
             # Underlining.
             if underline:
-                ly = y - self.underline_offset - 1
-                lh = self.underline_height
 
-                for py from ly <= py < (ly + lh):
+                ly = y - self.underline_offset - 1
+                lh = self.underline_height * underline
+
+                for py from ly <= py < min(ly + lh, surf.h):
                     for px from x <= px < (x + glyph.advance):
                         line = pixels + py * pitch + px * 4
 

@@ -1,11 +1,11 @@
 ##########################################################
 #
-#                       Hina Amagi                      
+#                       Hina Amagi
 #
 # A student first met in the introduction scene in class.
-# Have earlier been part of the swimming team and would 
+# Have earlier been part of the swimming team and would
 # like that Ashford Academy rebuilds their swimming pool.
-# 
+#
 # As female she becomes a friend who opens up about her
 # family and dead mother.
 #
@@ -15,8 +15,16 @@
 #
 ##########################################################
 
+init python:
+    def update_hina_amagi_outfit(uniform):
+        if uniform == "nude_uniform":
+            return "sexy_uniform_"
+        elif uniform == "sexy_uniform":
+            return "short_skirt_"
+        else:
+            return ""
 
-# We use this variable to keep track on her feelings towards the player. 
+# We use this variable to keep track on her feelings towards the player.
 define hina_amagi_points = 0
 define hina_amagi_outfit = ''          # This can be '' (nothing), 'short_skirt_', 'cosplay_' or 'sexy_uniform_'.
 
@@ -55,35 +63,35 @@ image hina_amagi cosplay_sad            = "characters/hina_amagi/hina_amagi_cosp
 define hina_amagi = Character('Hina Amagi', color="#F8BA87")
 
 
-# Here we make a list of all scenes with her. 
+# Here we make a list of all scenes with her.
 init:
     $ event("hina_amagi_in_class1", "act == 'class' and hina_amagi_points > 0 and hina_amagi_points < 7 and planning_day > 2", event.choose_one('class'))
-    # "hina_amagi_in_class" is the name/label of this event. "act" defines what type it is, with additional requirement to have planning_day above 5  
-    
-    $ event("hina_amagi_in_class2", "act == 'class' and hina_amagi_points >= 7 and hina_amagi_points < 16 and planning_day > 2", event.choose_one('class'), event.depends("hina_amagi_in_class1"))
+    # "hina_amagi_in_class" is the name/label of this event. "act" defines what type it is, with additional requirement to have planning_day above 5
+
+    $ event("hina_amagi_in_class2", "act == 'class' and hina_amagi_points >= 7 and hina_amagi_points < 16 and planning_day > 2", event.choose_one('class'), event.depends("hina_amagi_in_class1"),priority=1)
     # event.once() makes sure it only viewable once.event.depends("hina_amagi_in_class1") - this event must have been seen first.
 
-    $ event("hina_amagi_in_class3", "act == 'class' and hina_amagi_points >= 15 and planning_day > 2", event.choose_one('class'), event.depends("hina_amagi_pool_opening"))
-    $ event("hina_amagi_in_class4", "act == 'class' and hina_amagi_points >= 20 and planning_day < 5", event.choose_one('class'), event.depends("hina_amagi_in_class3"))
+    $ event("hina_amagi_in_class3", "act == 'class' and hina_amagi_points >= 15 and planning_day > 2", event.choose_one('class'), event.depends("hina_amagi_pool_opening"),priority=1)
+    $ event("hina_amagi_in_class4", "act == 'class' and hina_amagi_points >= 20 and planning_day < 5", event.choose_one('class'), event.depends("hina_amagi_in_class3"),priority=1)
 
     $ event("hina_amagi_pool_opening", "act == 'pool' and hina_amagi_points > 3", event.once(), event.only(), priority=1)
     $ event("hina_amagi_about_sexy_uniform", "act == 'office' and hina_amagi_points > 10 and uniform == 'sexy_uniform'", event.once(), event.only(), priority=1)
-    
+
     # Endings
     $ event("hina_amagi_transfer_ending", "act == 'office' and hina_amagi_points == -1", event.choose_one('office'), event.depends("hina_amagi_in_class2"))
 
     # Main story events
     $ event("hina_amagi_regarding_adaki", "act == 'class' and hina_amagi_points > 3", event.choose_one('class'), event.depends("adaki_school_grounds"), event.once(), event.only(), priority=1)
-    
-    
+
+
     # Text messages from Hina Amagi goes here
-    $ event("hina_amagi_text1", "hina_amagi_points > 10", event.once(), event.depends("hina_amagi_pool_opening"), priority=1)
+    $ event("hina_amagi_text1","act == 'class' and hina_amagi_points > 10", event.once(), event.depends("hina_amagi_pool_opening"), priority=1)
 
 
 # Here starts the actual scenes. The name in the list must match the ones below.
 
 label hina_amagi_in_class1:
-    
+
     scene bg classroom with fade
     # We want to load a backdrop named "classroom" with the effect "fade"
     $ renpy.show("hina_amagi "+hina_amagi_outfit+"normal")
@@ -91,7 +99,7 @@ label hina_amagi_in_class1:
     menu:                                       # We create a menu where you are given options to respond.
         "Good day.":                            # All menu options must end with a ":" and can include "if" parameters after the option before the ":".
             pov "Good day."                     # pov is the variable for the users name in text boxes.
-            
+
         "Hello there student!":
             $ renpy.show("hina_amagi "+hina_amagi_outfit+"surprised")
             hina_amagi "Don't you remember me?"
@@ -100,12 +108,12 @@ label hina_amagi_in_class1:
             hina_amagi "I understand [povTitle] [povLastName]..."
             $ hina_amagi_points -= 1
             return
-            
+
         "Hey there Amagi!":
             $ renpy.show("hina_amagi "+hina_amagi_outfit+"happy")
             hina_amagi "You remember me!"
             $ hina_amagi_points += 1
-            
+
     if building_pool == 0:
         hina_amagi "So [povTitle] [povLastName], is there any news regarding the pool?"
         pov "I'm sorry, there's nothing new at the moment."
@@ -120,7 +128,7 @@ label hina_amagi_in_class1:
 
 
 label hina_amagi_in_class2:
-    
+
     scene bg classroom with fade
     $ renpy.show("hina_amagi "+hina_amagi_outfit+"happy")
     hina_amagi "Hello [povLastName]! How are you today?"
@@ -132,18 +140,18 @@ label hina_amagi_in_class2:
             $ renpy.show("hina_amagi "+hina_amagi_outfit+"blush")
             hina_amagi "Aww [povLastName], you're so sweet!"
             $ hina_amagi_points += 2
-            
+
         "I'm good, how are you?" if building_pool == 0:
             $ renpy.show("hina_amagi "+hina_amagi_outfit+"normal")
             hina_amagi "Well, I still miss the pool... But I do enjoy chatting with you."
             pov "Oh, yes, sorry about the pool."
             $ renpy.show("hina_amagi "+hina_amagi_outfit+"sad")
             hina_amagi "It's okay... Some things never work out as planned."
-            
+
         "I'm good, how are you?" if building_pool > 0:
             hina_amagi "I'm great, I'm just getting ready for swimming club!"
             pov "You really like swimming, don't you?"
-            hina_amagi "Yeah, I really do! And it's all thanks to you we got the new pool, thanks again [povTitle] [povLastName]." 
+            hina_amagi "Yeah, I really do! And it's all thanks to you we got the new pool, thanks again [povTitle] [povLastName]."
             pov "Don't mention it."
             $ hina_amagi_points += 1
     return
@@ -154,7 +162,7 @@ label hina_amagi_in_class3:
     scene bg classroom with fade
     $ renpy.show("hina_amagi "+hina_amagi_outfit+"happy")
     hina_amagi "Hey there [povTitle] [povLastName]! *giggle*"
-    
+
     if renpy.random.randint(1,2) == 1:
         pov "Hey there Amagi!"
         hina_amagi "Looking for me?"
@@ -170,14 +178,14 @@ label hina_amagi_in_class3:
                 hina_amagi "I think I should go now..."
                 pov "Okay, you take care."
                 $ hina_amagi_points += 1
-            
+
             "Depends, have you been a bad girl?" if hina_amagi_points < 20:
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"surprised")
                 hina_amagi "I... don't think so... Why?"
                 pov "Relax, I'm just pulling your leg!"
                 hina_amagi "Oh, *giggle* you're funny [povTitle] [povLastName]."
                 $ hina_amagi_points += 1
-                
+
             "Depends, have you been a bad girl?" if hina_amagi_points >= 20:
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"blush")
                 hina_amagi "..."
@@ -210,7 +218,7 @@ label hina_amagi_in_class3:
                 hide hina_amagi
                 "There she goes once again."
                 $ hina_amagi_points += 1
-                
+
             "Hello Sunshine!" if hina_amagi_points < 20:
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"blush")
                 hina_amagi "How cute! I like it when you call me that!"
@@ -220,7 +228,7 @@ label hina_amagi_in_class3:
                 pov "Whaaa, you shine so bright! I might need sunglasses!"
                 "You both burst into laughter and continue to play around for a short while."
                 $ hina_amagi_points += 1
-                
+
             "Hello Sunshine!" if hina_amagi_points >= 20:
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"blush")
                 hina_amagi "[povTitle] [povLastName]..."
@@ -240,7 +248,7 @@ label hina_amagi_in_class3:
 
 
 label hina_amagi_in_class4:
-    
+
     scene bg classroom with fade
     $ renpy.show("hina_amagi "+hina_amagi_outfit+"happy")
     hina_amagi "Hello [povFirstName]!"
@@ -257,7 +265,7 @@ label hina_amagi_in_class4:
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"blush")
                 hina_amagi "Did I do that! Oh, sorry [povTitle] [povLastName]!"
                 $ hina_amagi_points += 1
-                
+
             "Hello Amagi!":
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"normal")
                 hina_amagi "A busy day?"
@@ -266,11 +274,11 @@ label hina_amagi_in_class4:
                 hina_amagi "A smooth talker like always! *giggle*"
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"happy")
                 pov "You know me!"
-                
+
             "Sunshine!":
                 hina_amagi "Shine shine!"
                 pov "Having a great day?"
-                hina_amagi "Yeah, I really do! How did you know?" 
+                hina_amagi "Yeah, I really do! How did you know?"
                 pov "Well I do know my day gets better when I see you."
                 $ renpy.show("hina_amagi "+hina_amagi_outfit+"blush")
                 hina_amagi "Aww, you're so nice..."
@@ -292,7 +300,7 @@ label hina_amagi_in_class4:
                     menu:
                         "Leave her be.":
                             pass
-                        
+
                         "Stop her.":
                             "You walk up behind her a put your hand on her shoulder and she quickly turns around."
                             $ renpy.show("hina_amagi "+hina_amagi_outfit+"surprised")
@@ -330,7 +338,7 @@ label hina_amagi_in_class4:
         return
 
 label hina_amagi_pool_opening:
-    
+
     scene bg pool with fade
     hina_amagi "Hello there [povLastName]!"
     "You can hear how she quickly runs up behind you."
@@ -368,13 +376,13 @@ label hina_amagi_pool_opening:
                         show hina_amagi cosplay_sad
                         hina_amagi "Ok..."
                         $ hina_amagi_points -= 2
-            
+
         "Wow, that's sexy!" if hina_amagi_points < 10:
             show hina_amagi cosplay_surprised
             hina_amagi "Whaa, umm, thank you..."
             "She looks equally confused as happy."
             $ hina_amagi_points += 1
-        
+
         "Wow, that's sexy!" if hina_amagi_points >= 10:
             show hina_amagi cosplay_happy
             hina_amagi "*giggle* I knew you would like me... WHAA, IT! I knew you would like {i}it{/i}!"
@@ -383,7 +391,7 @@ label hina_amagi_pool_opening:
             hina_amagi "Umm..."
             hina_amagi "You're so nice [povLastName]..."
             $ hina_amagi_points += 3
-        
+
         "I can't allow her wandering around like that!":
             pov "What is this?! You can't walk around like that, think of the school reputation!"
             show hina_amagi cosplay_surprised
@@ -399,7 +407,7 @@ label hina_amagi_pool_opening:
 
 
 label hina_amagi_about_sexy_uniform:
-    
+
     scene bg office with fade
     "Someone is knocking on your door."
     pov "It's open, come on in!"
@@ -411,7 +419,7 @@ label hina_amagi_about_sexy_uniform:
             hina_amagi "Wow, you look so serious when you say that here in your office!"
             pov "Haha, well, I am the principal after all."
             hina_amagi "Yeah, that's true, but you really seem like another person in here."
-            
+
         "Hello sunshine, what brings you to my door?":
             hina_amagi "Well... [povLastName]... I have a question..."
             pov "What's bothering you?"
@@ -430,7 +438,7 @@ label hina_amagi_about_sexy_uniform:
             menu:
                 'Propose a "deal"':
                     pov "Well, maybe I could make an exception..."
-                    show hina_amagi happy                    
+                    show hina_amagi happy
                     hina_amagi "Oh really! You're the best [povLastName]!"
                     pov "Thanks sunshine, but slow down a bit... If I do this for you, what would you do for me?"
                     if deviance > 50:
@@ -453,7 +461,7 @@ label hina_amagi_about_sexy_uniform:
                         hina_amagi "Maybe... I'll j-just go..."
                         "She slowly walks away. "
                         $ hina_amagi_points = 0
-                    
+
                     elif evil_points > 2:
                         show hina_amagi sad
                         hina_amagi "I've... heard all these rumours..."
@@ -473,7 +481,7 @@ label hina_amagi_about_sexy_uniform:
                         "She turns around running away with tears in her eyes. {w}What just happened?"
                         $ hina_amagi_points = -1
                         # Maybe you just meet her and she runs away if you meet her again?
-                        
+
                     else:
                         hina_amagi "I would give you the {b}BIGGEST{/b} hug ever! And maybe even a kiss."
                         hina_amagi "...On the cheek."
@@ -499,7 +507,7 @@ label hina_amagi_about_sexy_uniform:
                                 hina_amagi "N-n... Nothing!"
                                 "You smile to yourself, she's such a cute and innocent girl."
                                 "It feels like the hug is over but..."
-                                
+
                                 if renpy.random.randint(1,2) == 1:
                                     "Suddenly you feel a pair of soft lips against yours, and you see her closed eyes just in front of you."
                                     "She opens her eyes, looking right into yours, and in just a second they turn from blissful to terrified."
@@ -507,12 +515,12 @@ label hina_amagi_about_sexy_uniform:
                                     "Suddenly you feel her soft lips against your cheek while her arm slowly slides down your back."
                                     "You feel her heavy breathing getting closer to your ear and then she whispers:"
                                     hina_amagi "{size=16}...T-thank you [povFirstName].{/size}"
-                                
+
                                 hide hina_amagi
                                 "She quickly turns around and runs towards the door."
                                 "Bye bye sunshine."
                                 $ hina_amagi_points += 3
-                                
+
                             "Decline" if evil_points > good_points:#TODO: Write the rest and remove this
                                 pov "I'm sorry sunshine, I think I would need something more of you to make this deal worthwhile."
                                 show hina_amagi sad
@@ -579,7 +587,7 @@ label hina_amagi_about_sexy_uniform:
                                             "She slowly and clumsy get on her feet before she quickly leave the room."
                                             $ hina_amagi_points -= 5
                                             $ hina_amagi_outfit = 'sexy_uniform_'
-                                
+
                                 elif good_points > evil_points:
                                     "Hold her tight and tell her to relax."
                                     hina_amagi "Umm..."
@@ -615,7 +623,7 @@ label hina_amagi_about_sexy_uniform:
                                     # Love goes here
                                 else:
                                     pass
-                                    # Seems like a pass goes here 
+                                    # Seems like a pass goes here
 
                 "Offer a solution.":
                     menu:
@@ -651,7 +659,7 @@ label hina_amagi_about_sexy_uniform:
                             hina_amagi "{cps=*2}Thank you and I hope this Isn't wrong of me or anything I just want to thank you just so you know I really {i}really{/i} like you [povFirstName]!{/cps}"
                             "She gives you one of the worlds quickest kisses and then turns around running for her life. {w}\nThere she goes again."
                             $ hina_amagi_outfit = 'cosplay_'
-                    
+
                         "Shorten her skirt.":
                             pov "Well sunshine... Let's do like this, let's shorten your skirt and that will be all."
                             pov "Does that sound fair to you?"
@@ -719,7 +727,7 @@ label hina_amagi_about_sexy_uniform:
                             pov "Haha, don't worry sunshine. But you better go back to class now."
                             hina_amagi "Oh... Yes, thanks for the help [povLastName]!"
                             $ hina_amagi_outfit = 'short_skirt_'
-                        
+
 
                 "Ignore her plea.":
                     pov "I'm sorry sunshine, but if I make an exception for you everyone would come asking for one."
@@ -791,7 +799,7 @@ label hina_amagi_regarding_adaki:
             pov "That's great."
             hina_amagi "Bye!"
     return
-    
+
 
 # Beneath we find text messages from and to Hina Amagi
 # (´ω`) (=^_^=) (*^ω^) (^_^)

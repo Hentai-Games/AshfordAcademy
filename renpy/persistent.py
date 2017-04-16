@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -413,7 +413,13 @@ def MultiPersistent(name):
     if not renpy.game.context().init_phase:
         raise Exception("MultiPersistent objects must be created during the init phase.")
 
-    if renpy.windows:
+    if renpy.android:
+        files = [ os.path.join(os.environ['ANDROID_OLD_PUBLIC'], '../RenPy/Persistent') ]
+
+    elif renpy.ios:
+        raise Exception("MultiPersistent is not supported on iOS.")
+
+    elif renpy.windows:
         files = [ os.path.expanduser("~/RenPy/Persistent") ]
 
         if 'APPDATA' in os.environ:

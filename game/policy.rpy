@@ -15,7 +15,7 @@ define magic_accounting = 0
 
 # Standard variables for school policy
 define uniform = 'normal_uniform'               # nude_uniform, sexy_uniform, no_uniform, normal_uniform, conservative_uniform
-define entrance_req = 3                         # 1 easy -- 5 hard
+define entrance_req = 3                         # 1 easy -- 5 hard +sexy?
 define pda_rules = 'pda_suspension'             # pda_bdsm (5), pda_expulsion (4), pda_suspension (3), pda_normal (2), pda_none (1)
 define pda_rule_level = 3
 
@@ -36,7 +36,7 @@ define anatomic_body = 0                        # anatomic_body_non_sex (0), ana
 define learning_materials = 0.7                 # old (0.7), normal (1.0), new (1.3)
 
 init -100 python:
-    
+
     def policy_bonus():
         globals()['academics'] += (learning_materials * salary_skill_multiplier) * (entrance_req / 3 )
         globals()['artistery'] += (learning_materials * salary_skill_multiplier) * (entrance_req / 3 )
@@ -50,7 +50,7 @@ init -100 python:
         # Behavior data #
         if(behavior_rules == 'behavior_no_limit'):
             globals()['reputation'] -= 1
-        
+
         elif(behavior_rules == 'behavior_zero'):
             globals()['reputation'] += 1
 
@@ -60,24 +60,24 @@ init -100 python:
             globals()['deviance'] += 3
             globals()['inhibition'] -= 3
             globals()['reputation'] -= 1
-        
+
         elif(uniform == 'sexy_uniform'):
             globals()['morale'] -= 1
             globals()['behavior'] += 1
             globals()['inhibition'] -= 1
             globals()['deviance'] += 1
-            
+
         elif(uniform == 'normal_uniform'):
             globals()['morale'] -= 1
             globals()['behavior'] += 1
-            
+
         elif(uniform == 'no_uniform'):
             globals()['morale'] += 1
             globals()['behavior'] -= 1
             globals()['inhibition'] -= 1
-        
+
         elif(uniform == 'conservative_uniform'):
             globals()['morale'] -= 2
             globals()['behavior'] += 2
             globals()['deviance'] -= 2
-            globals()['inhibition'] += 2 
+            globals()['inhibition'] += 2
