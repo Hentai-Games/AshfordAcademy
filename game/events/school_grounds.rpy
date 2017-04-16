@@ -512,7 +512,7 @@ label school_grounds27:
 
     scene school_grounds27-1 with fade
     "Not all encounters are of the expected kind but this is the kind that are easily enjoyed."
-    if deviance > 20 and povGender == 'Male':
+    if deviance > 20 and povGender == "male":
         menu:
             "Leave her alone.":
                 pass

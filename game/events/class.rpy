@@ -42,10 +42,10 @@ init:
 
         ## Here be Class35
 
-        $ event("class36", "act == 'class' and inhibition < 75 and deviance > 20 and good_points > 1 and povGender == 'Male'", event.once(), event.only(), priority=20)
+        $ event("class36", "act == 'class' and inhibition < 75 and deviance > 20 and good_points > 1 and povGender == 'male'", event.once(), event.only(), priority=20)
         $ event("class37", "act == 'class' and inhibition < 85 and deviance > 10 and tentacles > 0", event.choose_one('class'))
         $ event("class38", "act == 'class' and inhibition < 80 and deviance > 5", event.choose_one('class'))
-        $ event("class39", "act == 'class' and inhibition < 60 and deviance > 25 and povGender == 'Male'", event.choose_one('class'))
+        $ event("class39", "act == 'class' and inhibition < 60 and deviance > 25 and povGender == 'male'", event.choose_one('class'))
         $ event("class40", "act == 'class' and inhibition < 90 and deviance > 10", event.once(), event.only(), priority=20)
         $ event("class41", "act == 'class' and inhibition < 90 and deviance > 10", event.once(), event.depends("class40"), event.only(), priority=20)
         $ event("class42", "act == 'class' and deviance <= 15 and morale >= 25", event.choose_one('class'))
@@ -143,9 +143,9 @@ label class_introduction:
             pov "Hello, my name is [povName] and I'm a... Oh, wait... Do any of you kids have a drink?"
             "class" "..."
             teacher_susan "Oh my..."
-            if povGender == 'Male':
+            if povGender == "male":
                 pov "I do prefer gin or whiskey but anything would be fine."
-            elif povGender == 'Female':
+            elif povGender == "female":
                 pov "I do prefer wine or whiskey but anything would be fine."
             "class" "..?"
             pov "Come on kids, I'm sure some of you have a lil' bottle with you in school!"
@@ -297,7 +297,7 @@ label class7:
                     scene class7-3-4
                     "Wow, she's really putting up a show."
                     girl "Ah! Mhmm... ah... Seeing you here... Mhmm... Really turns me on..."
-                    if povGender == 'Male':
+                    if povGender == "male":
                         "You can see how her pussy is dripping down to both her legs and the table while her eyes are focused on the growing bulge in your pants."
                     else:
                         "You can see how her pussy is dripping down to both her legs and the table while her eyes are slide up and down your body."
@@ -332,7 +332,7 @@ label class8:
             $ inhibition += 2
             $ morale -= 3
 
-        "Join them." if povGender == 'Male':
+        "Join them." if povGender == "male":
             "As you see her tearful eyes you can't stop yourself."
             "You walk over and push away the guy holding her head."
             guy "Hey! What the fuck man?"
@@ -377,7 +377,7 @@ label class8:
             $ reputation -= 3
             $ evil_points += 2
 
-        "Watch them." if povGender == 'Female':
+        "Watch them." if povGender == "female":
             "You can clearly see the tearful eyes of the once pretty little thing as she gets fucked and degraded by her classmates. Over and over again."
             girl "*sob* Please... *sob* no... no more... *sob* I... *sob can't *sob* take it... *sob*"
             "The guys take turns fucking both her mouth and pussy until some guy gets the idea to try her ass. You can see the fear and pain in her eyes while they do their best to shove a large dick into her tight anus."
@@ -732,9 +732,9 @@ label class21:
 label class22:
 
     scene class22 with fade
-    if povGender == 'Male':
+    if povGender == "male":
         "As the students work in pairs, you see an obvious player with a cute girl in his clutches. Lucky guy."
-    elif povGender == 'Female':
+    elif povGender == "female":
         "As the students work in pairs, you see an obvious player with a cute girl in his clutches."
     $ morale += 1
     return
@@ -807,7 +807,7 @@ label class27:
             $ morale += 1
             $ behavior -= 1
 
-        "So?" if povGender == 'Male':
+        "So?" if povGender == "male":
             pov "Damn right! Evolution is a wonderful thing, don't ya think?"
             girl "WHAT?!"
             pov "And the best part is, once a woman gets old and her tits get saggy, you just throw her out and get a younger one!"

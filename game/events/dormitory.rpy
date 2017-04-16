@@ -46,7 +46,7 @@ label dormitory_introduction:
             susan_marina "Thank you [povTitle] [povLastName]. \nAs I stand here before you all, I remember my own years as a student. Though many changes has come to pass, I am really proud to be able to tell you this: Ashford is still a front runner in modern education."
             susan_marina "You students hold our banner high, you make us proud and you make us want to work even harder to assist you in becoming the pride of our nation. \nThank you all, I hope that our new dormitory will be another solid reason for future students to choose Ashford as their catapult into the wonderful world of knowledge."
 
-        "Jack Drake" if new_game_plus == True and povGender != 'Female':
+        "Jack Drake" if new_game_plus == True and povGender != 'female':
             show jack_drake smile at center
             jack_drake "Whoaa, whazup kids?! This is gonna be so sweet, I mean - now you get the chance to actually sleep at school! And it's ok! \nI remember when I studied here, well - I didn't exactly study, and not here but that's not important right now. What's important is that we have each other, and that we know how to dance! As long as you dance, they can't take your shoes, right?"
             "students" "Uh, right..."
@@ -63,7 +63,7 @@ label dormitory_introduction:
             "Students" "Run!"
             jack_drake "We're gonna drop it like it's cold!"
 
-        "Jack Drake" if new_game_plus == True and povGender == 'Female':
+        "Jack Drake" if new_game_plus == True and povGender == "female":
             show jack_drake smile at center
             jack_drake "As [povTitle] [povLastName] once said to me \"Jack, We're just two lost souls swimming in a fish bowl.\"."
             "I am quite sure I {i}never{/i} said anything like that."
@@ -543,7 +543,7 @@ label dormitory22:
                         else:
                             girl "Okay, you have a good evening then!"
 
-                    "I want to inspect all of you" if povGender != "Female":
+                    "I want to inspect all of you" if povGender != "female":
                         if inhibition < 90 or deviance > 10:
                             scene dormitory22-5
                             girl "Like this?"

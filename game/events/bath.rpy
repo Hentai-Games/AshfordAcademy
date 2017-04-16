@@ -73,7 +73,7 @@ label bath4:
             "You quickly walk away without being noticed."
 
         "Join them!":
-            if ((inhibition - renpy.random.randint(0,5)) > 75 and povGender == 'Male' or (inhibition - renpy.random.randint(0,10)) > 75 and povGender == 'Female'):
+            if ((inhibition - renpy.random.randint(0,5)) > 75 and povGender == "male" or (inhibition - renpy.random.randint(0,10)) > 75 and povGender == "female"):
                 "After the girls notice you, they start to scream and throw stuff at you! You run away as fast as you can."
                 $ reputation -= 1
                 $ morale -= 1

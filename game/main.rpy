@@ -134,11 +134,11 @@ label new_game_plus:
             "Please choose your gender:"
             menu:
                 "Male":
-                    $ povGender = 'Male'
+                    $ povGender = 'male'
                     $ povTitle = "Mr."
                     $ povBdsmTitle = "Master"
                 "Female":
-                    $ povGender = 'Female'
+                    $ povGender = 'female'
                     $ povTitle = "Ms."
                     $ povBdsmTitle = "Mistress"
 

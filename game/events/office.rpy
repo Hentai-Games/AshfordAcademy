@@ -284,7 +284,7 @@ label office11:
         menu:
             "Compliment the outfit.":
                 pov "That's a sexy outfit."
-                if povGender == "Female":
+                if povGender == "female":
                     teacher "Thank you [povFirstName], it's a bit risque but I wanted to give it a try."
                     pov "It suits you and your great body perfectly."
                     teacher "*giggle*"
@@ -423,7 +423,7 @@ label office19:
     teacher "Ahhh...."
     "She looks at you with desire."
     menu:
-        "Join her." if povGender == "Male":
+        "Join her." if povGender == "male":
             "You walk towards her and let her perky tits fill you hands while you play with them."
             teacher "Ah... Mhmm..."
             pov "Do you like that?"
@@ -475,7 +475,7 @@ label office19:
         "Leave her.":
             "You smile to yourself while you leave. You can clearly hear her moan as she's getting closer to climax."
 
-        "Stop her." if povGender == "Male":
+        "Stop her." if povGender == "male":
             "You slowly approach her and you can clearly see how exited she becomes. You stop right in front of her and put you hand on her vibrator and remove it from her cunt."
             pov "Bad teacher. Very bad teacher."
             teacher "Ah... Mhmm... Please? {w}Fuck me... Please!"

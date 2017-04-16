@@ -453,7 +453,7 @@ label gym29:
         scene gym29-1 with fade
     else:
         scene gym29-2 with fade
-    if povGender == "Female":
+    if povGender == "female":
         "I remember those days, when we used to play with each other after gym class..."
     elif renpy.random.randint(1,2) == 1:
         "Sometimes these girls can be a bit hands on."

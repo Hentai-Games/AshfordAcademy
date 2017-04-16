@@ -478,7 +478,7 @@ label sports_field29:
         linear 7.5 pos (0.0, -1.0)
         linear 7.0 pos (0.0, -0.1)
     with fade
-    if povGender == 'Male':
+    if povGender == "male":
         if renpy.random.randint(1,2) == 1:
             "That's a ball girl in my taste."
         else:
@@ -505,7 +505,7 @@ label sports_field31:
     if renpy.random.randint(1,2) == 1:
         "Keeping fit is good for both body and mind."
     else:
-        if deviance > 5 and povGender == "Male":
+        if deviance > 5 and povGender == "male":
             "Tight clothes and young bodies, that's how I like it."
         else:
             pov "Don't looks so surprised, I like to take a walk sometimes. "

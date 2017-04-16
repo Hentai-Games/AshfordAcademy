@@ -136,9 +136,9 @@ label cafeteria6:
     girl "Hello and welcome to the cafeteria, what can I help you with?"
     $ order = renpy.random.choice(["coffee", "tea", "warm milk"])
     pov "I would like a cup of [order] please."
-    if povGender == "Male":
+    if povGender == "male":
         girl "Right away sir!"
-    elif povGender == "Female":
+    elif povGender == "female":
         girl "Right away miss!"
     else:
         girl "Right away!"

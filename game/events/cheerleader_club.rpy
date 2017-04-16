@@ -32,7 +32,7 @@ label cheerleader_club3:
         $ morale -= 1
     else:
         scene cheerleader_club3-2 with fade
-        if povGender == "Male":
+        if povGender == "male":
             "I could observe these girls all day long. Those short skirts and petite breast jumping up and down... Up and down..."
         else:
             "girls" "Go Ashford! *clap* *clap* Go Ashford! *clap* *clap*"
@@ -66,7 +66,7 @@ label cheerleader_club4:
             "I know they're young and all, but someone's gotta teach them some basic behavior and manners!!"
             $ deviance -= 1
 
-        "So girls just want to have fun, eh?" if povGender == "Male":
+        "So girls just want to have fun, eh?" if povGender == "male":
             pov "Relax, I'm not gonna make a big fuzz about this."
             girl "Y-you're not?"
             pov "Everybody makes mistakes from time to time."
