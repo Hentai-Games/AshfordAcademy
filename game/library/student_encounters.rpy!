@@ -1,0 +1,224 @@
+################ STUDENT ENCOUNTERS ################
+# This module allows creating students with a given 
+# set of characteristics to allow interactions and
+# manipulation.
+# Note: Most local variables are defined as 
+# function.variable for easier external reference
+# for debugging purposes.
+####################################################
+
+init -2 python:
+    #Load files for the generation of student names.
+    femaleNames = [line.rstrip('\n') for line in renpy.file('./library/femaleNames.txt')]
+    maleNames = [line.rstrip('\n') for line in renpy.file('./library/maleNames.txt')]
+    unisexNames = [line.rstrip('\n') for line in renpy.file('./library/unisexNames.txt')]
+    lastNames = [line.rstrip('\n') for line in renpy.file('./library/lastNames.txt')]
+    
+    # This is a dictionary that assigns a multiplier for every common school stat for each personality.
+    # Personalities affect the various stats of each students, like "Prudent", "Outgoing" etc.
+    # the order is [Morale(mood),Behavior,Academics,Artistery,Athletics,Deviance,Inhibition, Respect, Affection]
+    # NOTE: For game balance the average of each stat should be equal through all stats.
+    #                           [Morale Behavi, Academ, Artist, Athlet, Devian, Inhibi, Respec, Affection
+    personalities = {
+        'Plain':                [1,     1,      1,      1,      1,      1,      1,      1,      1],
+        'Calm':                 [1,     1.2,    1,      1,      1,      0.8,    1,      1,      1],
+        'Prudent':              [1,     1.2,    1,      1,      1,      0.7,    0.7,    1.1,    0.9],
+        'Outgoing':             [1.5,   1,      1,      1.2,    1,      1,      1.2,    0.9,    1.2],
+        'Lazy':                 [0.8,   0.8,    0.8,    0.8,    0.8,    0.8,    0.8,    0.8,    0.8],
+        'Delinquent':           [0.6,   0.6,    0.6,    0.8,    1.3,    1.2,    1.3,    0.75,   0.9],
+        'Bookworm':             [1,     1,      1.5,    0.9,    0.3,    0.9,    0.9,    1,      0.9],
+        'Pervert':              [0.9,   0.9,    0.9,    0.9,    0.9,    1.5,    1.5,    1,      0.9],
+        'Happy-Go-Lucky':       [1.5,   1.5,    0.9,    0.9,    0.9,    0.9,    0.9,    1,      1.5],
+        'Sporty':               [0.9,   1,      0.9,    0.9,    1.5,    0.9,    0.9,    1,      0.9],
+        'Innocent':             [1.1,   1.1,    1,      1,      1,      0.5,    1.1,    1.1,    1.1]
+        }
+
+    affiliations = {
+        'None':                 [1,     1,      1,      1,      1,      1,      1,      1,      1],
+        'Cheerleader Club':     [1.3,   0.8,    0.9,    0.9,    1.1,    1,      1.1,    1,      1],
+        'Student Council':      [0.5,   1.5,    1,      1,      1,      0.7,    0.7,    1.2,    0.5],
+        'Athletics Team':       [0.9,   1,      0.9,    0.9,    1.5,    0.9,    0.9,    1,      0.9]
+        }
+
+init -1 python:
+    import itertools
+    
+    ################ SCHOOL ROSTER ################
+    # Defines the SchoolRoster class for future use and expansion.
+    # it now only holds information of all defined "active" students.
+    # could be expanded to hold e.g. total of "active" students, stats for them, or be tied with the office system.
+    class SchoolRoster:
+        def __init__(self,students,teachers):           
+            if students is None:
+                self.students = []
+            if teachers is None:
+                self.teachers = []
+
+                
+    ################ STUDENT CLASS ################           
+    # Defines the Students class
+    ### Variables ###
+    # 1. Name of the student, in the form of a fullname string, e.g. 'Alicia Hearth'
+    # 2. Sex of the student. String variable. 'Male'/'Female'/whatever
+    # 3. Orientation of the person. Numerical variable. 0 = straight, 1 = gay/lesbian, 2 = bi
+    # 4. Personality of the student. Each personality could look up a table of predetermined attributes (behavior,deviance etc.) and should affect interactions.
+    # 5. Locations is a predefined list of all possible locations the student can be found.
+    # 6. Current_location is empty upon student creation and is populated with current location after EncounterCheck is ran. 
+    # 7. Sociability should be a 0-100 number denoting the likelihood of the student being sociable.
+    # 8. Meet is a boolean trigger, deciding whether the player can meet the student in his/her current location. Used for event conditions. Defaults to None.
+    # 9. Body/outfit will be used with the generation of sprites.
+    # 10. Relationships is a dictionary with each key being another student (or the player) and it's value the student's relationship with him/her (probably -100:100 value range). 
+    #     Possible relationships could be a predetermined list that could be used as an event condition.
+    # 11. Description is a text that could be used to describe the character (and show up in the office screen). Defaults to None.
+    # 12. Stats is a list containing the value of each stat. Stats are defined as the school stats multiplied by the factor provided by the personality.
+    class Student:
+        def __init__(self,firstName,lastName,sex,orientation,personality,locations,sociability,current_location=None,meet=None,body=None,outfit=None,relationships={},description=None,stats=None):
+            self.firstName = firstName
+            self.lastName = lastName
+            self.sex = sex
+            self.orientation = orientation
+            self.personality = personality
+            self.locations = locations
+            self.current_location = current_location
+            self.sociability = sociability
+            self.meet = meet
+            self.body = body
+            self.outfit = outfit
+            self.relationships = relationships
+            self.description = description
+            self.stats = stats                  # should be self.stats = UpdateStats(self), but global stats (morale,behavior,etc.) need to have a lower init to work. 
+            SchoolRoster.students.append(self)
+
+        def generateStudentName(sex=''):
+            #Generates first and last name and returns it.
+            if sex == 'female':
+                firstName = femaleNames[(renpy.random.randint(0, (len(femaleNames) -1)))]
+            elif sex == 'male':
+                firstName = maleNames[(renpy.random.randint(0, (len(maleNames) -1)))]
+            else:
+                firstName = unisexNames[(renpy.random.randint(0, (len(unisexNames) -1)))]
+            
+            #Lastly we generate a family name
+            lastName = lastNames[(renpy.random.randint(0, (len(lastName) -1)))]
+            return(firstName, lastName)
+
+
+    ################ ENCOUNTER AND INTERACTION FUNCTIONS ################       
+    # EncounterCheck is a function called in each planning period to simulate students walking around.
+    ### Arguments ###
+    # Enabled decides if the code should simulate student movement or not. Used for test purposes and special cases. Defaults to True.
+    # Reset clears the current locations of all students. Used for clearing and recalculating locations in each iteration. Defaults to True.
+    # Interaction controls whether the StudentInteraction function will be called or not. Used when we want to update the student locations only. Defaults to True.
+    # Chance defines the probability of each student receiving a new current location. Can be altered for different day periods. Defaults to 7 (a 70% chance). 
+    ### Variables ###
+    # EncounterCheck.location_list is a dictionary, each key equals the student and each value equals his/her location.
+    def EncounterCheck(enabled=True,reset=True,interaction=True,chance=7):
+        if reset:
+            EncounterCheck.location_list = {}
+            
+        if enabled:
+            for item in SchoolRoster.students:
+                # each item is each student object in the list.
+                # Reset individual student locations in each run
+                item.current_location = None
+                if renpy.random.randint(0,10) <= chance:
+                    item.current_location = renpy.random.choice(item.locations)
+                    # The pair is [Student object:Student location].
+                    EncounterCheck.location_list[item] = item.current_location # ITEM.NAME IS THERE FOR NAME OUTPUT FOR DEBUGGING PURPOSES INSTEAD OF OBJECT AND SHOULD BE CHANGED TO JUST ITEM
+                    
+            ### check for same location between students. ###
+            # List of lists of students in each location. Cleared each run.
+            EncounterCheck.students_in_location = []
+            # Check for all different locations in dict. ## LIKELY CAN BE DONE MORE EFFICIENTLY
+            EncounterCheck.unique_locations = list(set(EncounterCheck.location_list.values()))
+            
+            for item in EncounterCheck.unique_locations:
+                # Temporary list of students in each location. Cleared each loop.
+                temp_students_in_location = []
+                # Adds matching students to temporary list.
+                temp_students_in_location = [k for k, v in EncounterCheck.location_list.items() if v is item]
+                # Adds temporary list to list.
+                EncounterCheck.students_in_location.append(temp_students_in_location)
+                
+        if interaction:
+            # Calling StudentInteraction with passed arguments.
+            StudentInteraction(EncounterCheck.unique_locations,EncounterCheck.students_in_location)
+        return
+        
+        
+        
+    # StudentInteraction is a function called when two or more students are in the same location to simulate possible interactions.
+    ### Arguments ###
+    # students_in_location is a list containing all the "active" students in a specific location, also defining how many possible interactions can happen.
+    # the list is passed on by EncounterCheck.
+    def StudentInteraction(unique_locations=None,students_in_location=None):
+        # If lists are empty, the function passes to avoid it running directly with empty lists and throw an error.
+        if not unique_locations and not students_in_location:
+            pass
+        else:
+            StudentInteraction.student_pairs = []
+            for i in range(len(unique_locations)):
+                # only run the code if more than 1 person is in a location
+                if len(students_in_location[i]) > 1:
+                    StudentInteraction.student_pairs = []
+                    # itertools.combinations(students_in_location[i],2) lists all available unique pairs in a list.
+                    # this guarantees that interaction between any pair of students is calculated only once.
+                    StudentInteraction.student_pairs = list(itertools.combinations(students_in_location[i],2))
+                    for item in StudentInteraction.student_pairs:
+                        s1 = item[0]                      # s1 = item[0] = Student 1
+                        s2 = item[1]                      # s2 = item[1] = Student 2
+                        ac = Actions(s1,s2)               # This is done for code brevity and readability. Better using ac.action than Actions(s1,s2).action
+                        if s2 not in s1.relationships:    # checks if students have met each other (if they have a not null relationship), and if not make each other's relationship equal to 0
+                            ac.Meet()
+                        elif s1.relationships[s2] >= s2.relationships[s1] >= 80: # checks for a high enough relationship and if both students gender and orientation match.
+                            if (s1.sex is s2.sex and s1.orientation,s2.orientation in [1,2]) or (s1.sex is not s2.sex and s1.orientation,s2.orientation in [0,2]):
+                                ac.Flirt()
+                        else:
+                            ac.Chat()
+                       
+    ################ STAT CALCULATION AND UPDATE ##################
+    # This is used to update the stats of specific student (if one is given), or all of them (if none is given) based on the school stats.
+    def UpdateStats(student=None):
+        students_to_update = []
+        school_stats = [morale,behavior,academics,artistery,athletics,deviance,inhibition]
+        if student is None:
+            students_to_update = SchoolRoster.students
+        elif student is not None:
+            students_to_update.append(student)
+        for item in students_to_update:
+            stats_factor = personalities.get(item.personality)
+            # the below function zip() pairs school stat with the student factor 
+            # and we multiply them to find the student stat, and if greater than 100 sets it to 100 to normalize them.
+            item.stats = [int(a*b) if int(a*b) <= 100 else 100 for a,b in zip(school_stats,stats_factor)]
+
+
+    ################ ACTIONS ################
+    class Actions(object):
+        def __init__(self,s1,s2):
+            self.s1 = s1 # Student 1
+            self.s2 = s2 # Student 2
+            
+        def Meet(self):
+            self.s1.relationships[self.s2] = 0
+            self.s2.relationships[self.s1] = 0
+            pass
+        
+        def Chat(self):
+            pass
+            
+        def Flirt(self):
+            pass
+
+
+################ Example student declaration ################
+init:
+    python:
+
+        Alicia = Student('Alicia', 'Hearth','Female',0,'Calm',['library','baths'],60)
+        Alicia2 = Student('Alicia', '2','Female',0,'Calm',['grounds','baths'],60)
+        Alicia3 = Student('Alicia', '3','Female',1,'Calm',['pool','baths'],60)
+        Alicia4 = Student('Alicia', '4','Female',1,'Calm',['library','office','gym'],60)
+
+label b:
+    "[personalities]"
+    return

@@ -1,0 +1,7 @@
+########################################################
+# FOLDER:       Ashford Academy\game\android
+# 
+# This folder includes files specific for the Android
+# version of the game.
+#
+########################################################

@@ -1,0 +1,22 @@
+# This file includes settings that can be used to force Ashford Academy / Renpy to run in a specific way.
+
+#RENPY_GL_ENVIRON
+#Sets the OpenGL texture environment.
+
+#RENPY_GL_RTT
+#Sets the OpenGL render-to-texture method.
+
+#RENPY_GL_VSYNC
+#This determines if Ren'Py will attempt to synchronize with the display's vertical refresh. (This prevents tearing, at the cost of potentially lowering framerate.) Set this to "0" to disable synchronization, or "1" to sync to every vertical refresh.
+
+#RENPY_LESS_MEMORY
+#This causes Ren'Py to reduce its memory usage, in exchange for reductions in speed.
+
+#RENPY_LESS_UPDATES
+#This causes Ren'Py to reduce the number of screen updates that occur.
+
+#RENPY_SKIP_SPLASHSCREEN
+#When set, skips the splashscreen.
+
+#RENPY_DISABLE_FULLSCREEN
+#If set, Ren'Py will refuse to go into fullscreen mode.

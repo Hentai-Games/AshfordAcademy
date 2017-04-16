@@ -1,0 +1,7 @@
+########################################################
+# FOLDER:       Ashford Academy\game\library
+# 
+# This folder is should be used for standalone functions
+# that can be easily modified in a modular way.
+#
+########################################################

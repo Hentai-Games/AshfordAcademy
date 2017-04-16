@@ -1,0 +1,8 @@
+########################################################
+# FOLDER:       Ashford Academy\game\gallery
+# 
+# This folder includes files created by user bluegoo.
+# These files make it possible to view a gallery of
+# images the user have already seen in the game.
+#
+########################################################

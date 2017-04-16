@@ -1,0 +1,7 @@
+########################################################
+# FOLDER:       Ashford Academy\game\screens
+# 
+# All screens should be placed in this folder.
+# For ease of use, place screens in individual files.
+#
+########################################################

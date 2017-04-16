@@ -1,0 +1,10 @@
+########################################################
+# FOLDER:       Ashford Academy\game\mods
+# 
+# Files in this folder should be fully modular and be
+# handled either by the "Mod Manager" or just by being
+# parsed by renpy.
+#
+# Includes:		classic_background, krashford_academy
+#
+########################################################

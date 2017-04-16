@@ -1,0 +1,163 @@
+#This is only a raw layout, this code need to be improved.
+#All the element are "hard coded" in this layout.
+
+
+init python:
+    SchoolRoster.students = []
+    SchoolRoster.teachers = []
+    no_act_desc = "True"                        #used when the textbutton for action is hovered or not.
+    student_selected = "none"                   #if it is "none" the teachers/students tab is seen, otherwise the student personal info are seen. (this should be used for teacher too.. change the variable name?)
+    office_tab=SchoolRoster.students            #which tab is seen, teachers or students. Right now is not used so there is only one "list" that is always displayed (the two leah herring). No matter wich tab (student or teacher) you select. Needs to be changed.
+    frame_test= Frame("gui/frame.png", 20, 20)
+    frame_test2= Frame("gui/frame.png", 20, 20)
+    frame_test3= Frame("gui/frame.png", 20, 20)
+    style.frame["pers"].background = Frame("gui/frame2.png", 20, 20)
+    style.frame["pers"].xpadding = 16
+    style.frame["pers"].top_padding=16
+    style.frame["pers"].bottom_padding=14
+    stats_list = ['Morale','Behavior','Academics','Artistery','Athletics','Deviance','Inhibition']
+
+
+screen office_screen:
+    imagemap:
+        ground "locations/places/office.jpg"
+
+    vbox:
+        xfill True
+        hbox:
+            spacing 100
+            frame:
+                yalign 0.
+                xpadding 16
+                top_padding 16
+                bottom_padding 14
+                background frame_test3
+                text "Actions: 1"       
+        
+    frame:
+        xmargin 150
+        ymargin 30
+        
+        if student_selected == "none":
+            vbox:
+                xfill True
+                hbox:
+                    #textbutton "TEACHERS" action SetVariable("office_tab",allteachers) text_size 45
+                    textbutton "STUDENTS" action SetVariable("office_tab",SchoolRoster.students) text_size 45
+                
+                
+                null height 20
+                viewport:
+                    scrollbars "vertical"       #scrollbar already here for when there will be so many students to fill the tab.
+                    draggable True
+                    mousewheel True
+                    hbox:
+                        xfill True
+                        xalign 0.5
+                        spacing 20
+                        box_wrap True           #with this option when a "line" is full it will automatically go to the next line
+                        
+                        #here start the the student blocks. Clicking the student image will open the student's personal tab.
+                        
+                        for item in office_tab:
+                            #if item.meet:
+                                vbox:
+                                    xoffset 15
+                                    null height 20
+                                    text "[item.name]" xalign 0.5
+                                    hbox:
+                                        frame:
+                                            $ ui.imagebutton (item.minipic,item.minipic,clicked=SetVariable("student_selected",item))
+                                        frame:
+                                            style style.frame["pers"]
+                                            hbox:
+                                                vbox:   
+                                                    text "lust"
+                                                    text "Loyalty"
+                                                    text "Scientific"
+                                                    text "Literature&Art"
+                                                    text "Athletics" 
+                                                    text "-no special-"    
+                                                null width 70
+                                                vbox:   
+                                                    text "23"
+                                                    text "56"
+                                                    text "39"
+                                                    text "45"
+                                                    text "35"
+        
+        #if student_selected is not "none" then the student_selected personal tab is shown.
+        ####################################################################################################
+        else:
+
+            hbox:
+                xfill True
+                yfill True
+                vbox:
+                    xmaximum 550
+                    vbox:
+                        null height 20
+                        text "[student_selected.name]" xalign 0.5 size 45
+                        null height 10
+                        hbox:
+                            vbox:
+                                ymaximum 0.4
+                                text "Stats:" xalign 0.5
+                                frame:
+                                    style style.frame["pers"]
+                                    hbox:
+                                        xminimum 250
+                                        xalign 0.5
+                                        vbox:
+                                            if student_selected.stats is not None:
+                                                for i in range(len(stats_list)):
+                                                    hbox:
+                                                        text(stats_list[i]) minwidth 150
+                                                        text(str(student_selected.stats[i]))
+                                            else:
+                                                text "Warning:\nStudent stats\nnot initialized."
+
+                            vbox:
+                                ymaximum 0.4
+                                text "Actions:" xalign 0.5
+                                frame:
+                                    style style.frame["pers"]
+
+                                        #hbox:
+                                        #    for ii in range(len(student_selected.actions)):
+                                        #        textbutton student_selected.actions[ii][0]  hovered SetVariable("no_act_desc",ii) unhovered SetVariable("no_act_desc","True") action #[Hide("office_screen"),Jump(student_selected.actions[ii][1])]
+                            
+                    vbox:
+                        yalign 1.0
+                        text "   Notes:"
+                        frame:
+                            xpadding 16
+                            top_padding 18
+                            bottom_padding 14
+                            xfill True
+                            background frame_test
+                            viewport:
+                                scrollbars "vertical"
+                                draggable True
+                                mousewheel True
+                                vbox:
+                                    spacing 10
+                                    text "Personality : [student_selected.personality]"
+                                    if student_selected.description is not None:
+                                        for item in student_selected.description:
+                                            text item size 18
+                                    #else:
+                                        #text student_selected.actions[no_act_desc][2] size 18
+                viewport:
+                    ymaximum 600
+                    xcenter 0.5
+                    ycenter 0.5
+                    add student_selected.mainpic 
+
+    hbox:
+        if student_selected != "none":
+            textbutton "Back to selection screen" action SetVariable("student_selected","none") xmargin 150  xfill True
+    hbox:
+            xalign 0.985
+            yalign 0.99
+            textbutton _("Return") action Return()

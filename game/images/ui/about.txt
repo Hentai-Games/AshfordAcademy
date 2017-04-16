@@ -1,0 +1,12 @@
+########################################################
+# FOLDER:       Ashford Academy\game\gui
+# 
+# All files in this folder is used in the game for the 
+# "User Interface" and are legally allowed to be
+# redistributed.
+#
+# All file and image declarations should be made in gui.rpy
+#
+# Exceptions:	acad-chibi.png
+#
+########################################################

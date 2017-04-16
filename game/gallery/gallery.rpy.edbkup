@@ -1,0 +1,196 @@
+#########
+# Gallery
+#
+# Supplies a generic gallery for those post-game image collectors / reviewers.
+#########
+
+#TODO: manage resizes / scrolls for odd-sized images, possibly using: renpy.image_size(im)
+#TODO: supply some sort/filter mechanism (such buttons grouped by directory name at the top of the screen)
+
+init python:
+
+    #image size "cache" (it's apparently an expensive operation)
+    gallery_button_image_size = False
+    gallery_main_button_image_size = False
+    
+    def gallery_main_button(text, action, xpos=None, ypos=None):
+        idle_image = 'gallery/main_idle.png'
+        hover_image = 'gallery/main_hover.png'
+        global gallery_main_button_image_size
+        if not gallery_main_button_image_size:
+            gallery_main_button_image_size = renpy.image_size(idle_image) #(174, 38)
+        image_size = gallery_main_button_image_size
+        scale = 1
+        ui.imagebutton(
+            idle_image=Fixed(
+                im.FactorScale(Image(idle_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            hover_image=Fixed(
+                im.FactorScale(Image(hover_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            selected_idle=Fixed(
+                im.FactorScale(Image(idle_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            selected_hover=Fixed(
+                im.FactorScale(Image(hover_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            action=action, #SetVariable('image_button_test', True),
+            focus_mask=True,
+            xmaximum=int(image_size[0] * scale + 6),
+            ymaximum=int(image_size[1] * scale),
+            right_margin=6,
+            xpos=xpos,
+            ypos=ypos,
+        )
+    
+    def gallery_button(text, action):
+        idle_image = 'gallery/main_idle.png'
+        hover_image = 'gallery/main_hover.png'
+        global gallery_button_image_size
+        if not gallery_button_image_size:
+            gallery_button_image_size = renpy.image_size(idle_image) #(174, 38)
+        image_size = gallery_button_image_size
+        scale = .8
+        ui.imagebutton(
+            idle_image=Fixed(
+                im.FactorScale(Image(idle_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            hover_image=Fixed(
+                im.FactorScale(Image(hover_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            selected_idle=Fixed(
+                im.FactorScale(Image(idle_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            selected_hover=Fixed(
+                im.FactorScale(Image(hover_image), scale),
+                Text(text, xalign=.5, yalign=.5),  #, outlines=[(1, '#808080', 0, 0)]),),
+            ),
+            action=action, #SetVariable('image_button_test', True),
+            focus_mask=True,
+            xmaximum=int(image_size[0] * scale + 6),
+            ymaximum=int(image_size[1] * scale),
+            right_margin=6,
+        )
+
+init 9001 python:
+    #define styles (for some reason we have to do it in python code)
+    style.gallery_menu_style = Style(style.default)
+    style.gallery_menu_style.clear()
+    style.gallery_stats_text_style = Style(style.default)
+    style.gallery_stats_text_style.outlines = [(1, '#000000', 0, 0),(2, '#808080', 0, 0)]
+    
+    gallery_items = []
+    unlocked = []   #images to unlock regardless whether they've been seen or not
+    unlock_all = False
+    
+    #find loaded images, and put them in the gallery (undocumented version):
+    #this requires us to be last; everyone should have imported what they want by now
+    from renpy.display import image as rp_img
+    for img_name, img_obj in rp_img.images.iteritems():
+        try:
+            if 'gui' in img_obj.filename or 'cache' in img_obj.filename: #ignore these
+                continue
+            gallery_items.append(' '.join(img_name))
+        except AttributeError:
+            pass    #we don't care about images with no names
+    
+    #find loaded images, and put them in the gallery (list_files() version):
+    '''
+    import os.path
+    for file in renpy.list_files():
+        if file.endswith('.jpg') or file.endswith('.png'):
+            #we split off the path to the image in an effort to supply an unlock feature, 
+            #but this only works on a handful of images
+            name = os.path.split(file)[1].replace('/', '_').replace('.jpg','').replace('.png','')
+            if 'gui' in file or 'cache' in file: #ignore these
+                continue
+            if 'locations' in file: #try adding a bg prefix to improve our odds (not all do this)
+                name = 'bg ' + name
+            if 'buildings' in file: #handle these as a special case
+                unlocked += [name]
+            renpy.image(name, Image(file))
+            gallery_items += [name]
+    '''
+    
+    #rows and columns in the gallery screens
+    gallery_rows = 4
+    gallery_cols = 3
+    
+    #thumbnail size in pixels:
+    thumbnail_x = 267
+    thumbnail_y = 150
+    
+    #(267x150) will work well with 16:9 screen ratio. 
+
+    gallery = Gallery()
+    
+    for gallery_item in gallery_items:
+        gallery.button(gallery_item + " button")
+        gallery.image(gallery_item)
+        if gallery_item not in unlocked and not unlock_all:
+            gallery.unlock(gallery_item)
+            
+    gallery.transition = fade
+    
+    import math
+    gallery_page=0
+    gallery_cells = gallery_rows * gallery_cols 
+    gallery_items_total = len(gallery_items)
+    gallery_pages = int(math.floor(gallery_items_total / float(gallery_cells)))
+    gallery_unlocked_total = sum([renpy.seen_image(name) for name in gallery_items])
+    
+init 9002 python:
+    #Avast, here there be thumbnails! 
+        
+    for gallery_item in gallery_items:
+        renpy.image (gallery_item + " button", im.Scale(ImageReference(gallery_item), thumbnail_x, thumbnail_y))
+        renpy.image (gallery_item + " button disabled", im.Grayscale(ImageReference(gallery_item + " button")))
+
+image gallery_background = im.Sepia(Image('gui/mm_ground.png'))
+  
+screen gallery:
+    tag menu
+    use navigation
+    frame background 'gallery_background' xalign 0.5 yalign 0.5:
+        #if no background, we can see the main menu; if background, we'll need a way back, but can sho more stuff
+        grid gallery_rows gallery_cols:
+            xalign 0.5
+            yalign 0.5
+            $ i = 0
+            $ next_page = gallery_page + 1
+            if next_page > int(len(gallery_items)/gallery_cells):
+                $ next_page = 0
+            for gallery_item in gallery_items:
+                $ i += 1
+                if i <= (gallery_page + 1) * gallery_cells and i > gallery_page * gallery_cells:
+                    add gallery.make_button(gallery_item + " button", 
+                        gallery_item + " button", 
+                        gallery_item + " button disabled", 
+                        xalign=0.5, yalign=0.5, 
+                        idle_border=None, background=None, bottom_margin=24
+                    )
+            for j in range(i, (gallery_page+1)*gallery_cells):
+                null
+        frame:
+            style_group 'gallery_menu_style'
+            yalign 0.97
+            style 'gallery_menu_style'
+            hbox:
+                
+                $ gallery_button("First", [SetVariable('gallery_page', 0), ShowMenu("gallery")])
+                $ gallery_button(_("Back"), [SetVariable('gallery_page', gallery_page - 1 if gallery_page != 0 else gallery_pages), ShowMenu("gallery")])
+                $ gallery_button(_("Next"), [SetVariable('gallery_page', next_page if next_page < gallery_pages else 0), ShowMenu("gallery")])
+                $ gallery_button(_("Last"), [SetVariable('gallery_page', gallery_pages), ShowMenu("gallery")])
+                $ gallery_button(_("Return"), ShowMenu("main_menu"))
+                
+                $ page_text = " Page: %s / %s " % (gallery_page, gallery_pages)
+                $ completed_text = " Completion: %s / %s " % (gallery_unlocked_total, gallery_items_total)
+                text page_text style 'gallery_stats_text_style'
+                text completed_text style 'gallery_stats_text_style'
