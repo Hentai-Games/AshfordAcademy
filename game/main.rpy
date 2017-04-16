@@ -5,6 +5,7 @@ init -1 python hide:
     config.version = "15.05.09"
     config.developer = True
     config.rollback_enabled = False
+    config.log ="test.txt"
 #
 #
 ###############################################
@@ -62,6 +63,8 @@ init python:
     afternoon_act   = None
     evening_act     = None
 
+    modDayPlannerFunctions = []
+    
 ########################################################
 #   This will most likely be moved at some point in time
 
@@ -76,6 +79,8 @@ init python:
 #   Sets the choices of the daily planner.
 #   @returns nothing
     def setDayPlannerChoices():
+        dp_clear_periods()
+    
         dp_period("Morning", "morning_act")
         dp_choice("Office", "office")
         if (building_sports_field > 0):
@@ -100,6 +105,14 @@ init python:
             dp_choice("Bath", "bath")
         if (building_club_rooms > 0):
             dp_choice("After school Clubs", "club_rooms")
+            
+        setModDayPlannerChoices()
+        return
+
+        
+    def setModDayPlannerChoices():
+        for plannerFunc in modDayPlannerFunctions:
+            plannerFunc()
         return
 
 

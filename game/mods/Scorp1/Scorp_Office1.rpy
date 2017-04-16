@@ -1,7 +1,7 @@
 #### FLAGON EVENT PACK 1 - Office ####
 
 ## This event pack contains events for all locations in the game except the Baths.
-## I am an inexperienced coder and using Flagon's pack as a base for this. 
+## I am an inexperienced coder and using Flagon's pack as a base for this.
 ## I believe he, in turn, used Goldo's code as a base - this is known as the circle of life.
 ## This File is for the Office.
 ## Pictures are located in the subdirectory \Scorp1\Office
@@ -19,7 +19,7 @@ define flash = Fade(0.1, 0.0, 0.5, color="#fff")
 define doubleflash = MultipleTransition([True, Fade(0.1, 0.0, 0.5, color="#fff"), True, Fade(0.1, 0.0, 0.5, color="#fff"),True])
 
 #Define the screen used for scrolling a picture (background picture to be declared first as 'scorp_bg')
-screen scorp_screen:
+screen scorp_scroll_screen:
     viewport:
         edgescroll (200, 500)
         mousewheel True
@@ -95,48 +95,48 @@ label scorp_office1:
     pov "I love this school!"
 
     return
-    
+
 label scorp_office2:
-    
+
     scene bg scorp_office2 with fade
     "The nude uniform policy makes assemblies much more fun. Girls go so red when they're up on stage!"
     "This girl's speech is being recorded. She'll be on the school website soon enough."
     "As you watch her talk, oblivious, the cameraman slowly pans down to her dripping pussy, and zooms in."
     return
-    
+
 label scorp_office3:
-    
+
     scene bg scorp_office3 with fade
     "The nude uniform policy makes assemblies much more fun. Girls go so red when they're up on stage!"
     "And get so wet..."
     return
-    
+
 label scorp_office4:
-    
+
     scene bg scorp_office4_1 with fade
 
     "As you travel into work today, you notice one of your pupils being molested on the train."
 
     if deviance <= 80:
-        
+
         "She's writhing in the commuters' grasp, as their fingers massage her breasts and slide inside her."
-        
+
         menu:
             "Intervene on her behalf.":
                 pov "Hey! Hands off my student, perverts!"
                 "The commuters look shocked, and let the girl go. She falls to her knees and adjusts her clothes, covering herself."
                 girl "Oh my God, [povTitle] [povFirstName], thank you so much! They were... They were..."
                 pov "I know, I know. Come on, stick with me, we'll walk to school together."
-            
+
                 $ morale +=1
                 $ deviance -=1
                 $ inhibition +=1
                 if renpy.random.randint(1, 5) == 1:
                     $ good_points += 1
-                        
+
                 return
-            
-            
+
+
             "Let the commuters have their fun.":
                 scene bg scorp_office4_2 with flash
                 "The commuters grow more and more bold, pulling aside the girl's panties and revealing her soaking pussy to the whole train."
@@ -152,9 +152,9 @@ label scorp_office4:
                 $ morale -=1
                 if renpy.random.randint(1, 3) == 1:
                     $ evil_points += 1
-            
+
                 return
-        
+
     else:
         "After a few minutes of obligatory struggle, the girl seems to accept what's happening and start to enjoy it."
         girl "Unnnnh, yes, keep going!"
@@ -171,7 +171,7 @@ label scorp_office4:
         "As the train doors slide shut behind you, you hear the girl let out a scream of uncontrollable ecstasy."
         pov "Well, I guess she is getting off after all, heh."
         scene bg scorp_office4_4 with flash
-        "You later hear that the girl turned up to school, half-naked and soaked in cum, three hours late." 
+        "You later hear that the girl turned up to school, half-naked and soaked in cum, three hours late."
 
         $ behavior -= 1
         $ deviance += 1
@@ -179,15 +179,15 @@ label scorp_office4:
         return
 
 label scorp_office5:
-    
+
     scene bg scorp_office5 with fade
     "The nude uniform policy makes assemblies much more fun. Girls go so red when they're up on stage!"
     "Look at that line of naked asses..."
     "When the girls finish their speech and hurry backstage, you spank each one as they go past, making them yelp slightly."
     return
-    
+
 label scorp_office6:
-    
+
     scene bg scorp_office6 with fade
     "You walk past a male teacher, on his way to the teachers' lounge."
     "He's pushing a half-naked girl in front of him, holding her by her legs like a wheelbarrow, impaled on his cock."
@@ -196,9 +196,9 @@ label scorp_office6:
     "He walks off, pumping merrily into the cunt of the teenage girl waddling on her hands before him."
     $ deviance +=1
     return
-    
+
 label scorp_office7:
-    
+
     scene bg scorp_office7_1
     "This naughty-looking slut has been sent directly to your office for wearing bandaids over her nipples and the slit of her pussy, in defiance of the nude uniform policy."
     girl "[povTitle] [povFirstName]!"
@@ -212,14 +212,14 @@ label scorp_office7:
             pov "How could I argue with that? Go forth and conquer, I wish you the best of luck."
             "She hugs you, pressing her warm loose breasts against your chest."
             girl "You're the best principal ever!"
-            
+
             $ morale +=1
             $ behavior -=1
             $ good_points +=1
-                        
+
             return
-            
-            
+
+
         "You *are* just a fucktoy, slut. Those holes should be open season.":
             scene bg scorp_office7_2 with flash
             "You pull the bandaids off her nipples. Then you peel away the one covering her pussy, slipping a finger in her soaking wet hole once you've done so."
@@ -230,9 +230,9 @@ label scorp_office7:
             $ deviance +=1
             $ behavior +=1
             $ morale -=1
-            
+
             return
-    
+
 label scorp_office8:
 
     scene bg scorp_office with fade
@@ -258,7 +258,7 @@ label scorp_office8:
             "You remove the girl's gag and blindfold."
             scene bg scorp_office8_2 with fade
             girl "Thank you! *gasp* The boys tied me up here... Told me I was going to spend the day as the school cum bucket!"
- 
+
             if deviance > 90:
                 girl "I wouldn't have minded, really... But I'd rather choose who I fuck, you know?"
                 pov "Oh really?"
@@ -281,7 +281,7 @@ label scorp_office8:
                 return
 
 label scorp_office9:
-    
+
     scene bg scorp_office9 with fade
     "While performing for the talent show, this girl takes the opportunity to show off her true 'talent'."
     if inhibition > 20:
@@ -296,13 +296,13 @@ label scorp_office9:
         return
 
 label scorp_office10:
-    
+
     scene bg scorp_office10 with fade
     "Most of the female teachers are following the nude uniform policy. Watching them play table tennis in the teachers' lounge is hypnotic."
     return
 
 label scorp_office11:
-    
+
     scene bg scorp_office11 with fade
     girl "Principal! I want to speak to you!"
     "You stare at the girl who just entered your office - she's practically nude! This is way beyond what even the sexy uniform policy allows."
@@ -316,15 +316,15 @@ label scorp_office11:
     return
 
 label scorp_office12:
-    
+
     scene bg scorp_office12 with fade
     "The nude uniform policy means the girls don't have to spend ages getting ready each morning!"
     pov "Punctuality is a virtue!"
-    $ behavior +=1    
+    $ behavior +=1
     return
-    
+
 label scorp_office13:
-    
+
     scene bg scorp_office13_1 with fade
     "One of the school's star students has been asked to give a speech for the day's assembly. She looks nervous."
     "Star student" "I was told to give... a presentation... on the importance of keeping your pussy clean and lubricated..."
@@ -346,7 +346,7 @@ label scorp_office13:
                 return
 
             else:
-                scene bg scorp_office13_2 with fade    
+                scene bg scorp_office13_2 with fade
                 "You move directly behind the girl. Firm action needs to be taken. She looks back at you, nervously."
                 "Star student" "Well, I, uh, I wanted to start by talking about, um, dignity..."
                 "You lean forward and whisper in her ear."
@@ -419,7 +419,7 @@ label scorp_office13:
 label scorp_office14:
 
     scene bg scorp_office14_1 with fade
-    
+
     "A girl has been sent to your office for flashing her huge tits in the schoolyard for everyone to see."
     pov "Why did you do such a thing?"
     girl "I don't know! A boy dared me... He told me they were too good to keep to myself, and I should share them with the world.."
@@ -471,7 +471,7 @@ label scorp_office14:
             return
 
 label scorp_office15:
-    
+
     scene bg scorp_office15 with fade
     "There's something beautiful about the despoiled appearance of a girl after you've finished with them."
     pov "Thank you for attending your weekly assessment session, Susie."
@@ -479,7 +479,7 @@ label scorp_office15:
     return
 
 label scorp_office16:
-    
+
     scene bg scorp_office16 with fade
     "Parent-teacher meetings these days are usually a tense affair, but sometimes you get to meet a father who understands."
     pov "It was very nice of you to come in to see me."
@@ -487,9 +487,9 @@ label scorp_office16:
     pov "Well, the reason I called you in today is relating to that. Your daughter needs to work on her gag reflex. If I may demonstrate..."
     girl "*gurgle*...*glub*...*cough*"
     return
-    
+
 label scorp_office17:
-    
+
     $ r=renpy.random.randint(1, 2)
     image bg scorp_office17 = ConditionSwitch("r==1","mods/Scorp1/Office/scorp_office17_1.jpg","r==2","mods/Scorp1/Office/scorp_office17_2.jpg")
 
@@ -497,15 +497,15 @@ label scorp_office17:
     "Since the nude uniform policy was implemented, girls' exposed assholes present very tempting targets. There's been a craze going round where boys ram a finger or two up there, without warning, for fun."
     "Apparently, they keep track of the number of girls they've 'surprised' like this. The top scorer at the moment has an impressive 49-asshole record."
     return
-    
+
 label scorp_office18:
-    
+
     scene bg scorp_office18 with fade
     "The train to school today is packed with your students. Such bright young things!"
     return
-    
+
 label scorp_office19:
-    
+
     #Panning up and down
     scene bg scorp_office19:
         xpos 0 ypos 0 xanchor 0 yanchor 0
@@ -514,20 +514,20 @@ label scorp_office19:
         pause 1.0
         linear 3.5 xalign 0.0 yalign 0.0
     with fade
-    
+
     #These lines of code allow for scrolling with the mousewheel after panning is done
     pause(10.0)
-    $ scorp_bg=ImageReference("bg scorp_office19")    
-    show screen scorp_screen
-    
+    $ scorp_bg=ImageReference("bg scorp_office19")
+    show screen scorp_scroll_screen
+
     "On the train to work, you notice a student who seems to have forgotten something important."
     pov "What a scatter-brain!"
     $ inhibition -=1
-    hide screen scorp_screen
+    hide screen scorp_scroll_screen
     return
-    
+
 label scorp_office20:
-    
+
     scene bg scorp_office20 with fade
     "You notice two girls outside the door to your office, kneeling ass-to-ass, a buzzing vibrator in both their pussies."
     pov "Nice! Any reason you're doing this outside my office?"

@@ -125,10 +125,11 @@ init python:
         skip_building_goal = False
         goal_list_buildings = []
         for building in buildings:
-            building_level = eval("building_"+building['name'])
-            building_cost = building['cost'][building_level]
-            if building_cost > 0:
-                goal_list_buildings.append(building['name'])
+            if eval(building['requirement']):
+                building_level = eval("building_"+building['name'])
+                building_cost = building['cost'][building_level]
+                if building_cost > 0:
+                    goal_list_buildings.append(building['name'])
 
         if not goal_list_buildings:
             skip_building_goal = True
@@ -387,7 +388,7 @@ label weekly_planning:
     $ planning_day = 0
     $ building_bonus()
     $ policy_bonus()
-    call events_skip_period from _call_events_skip_period
+    scene Ashford_Academy with circleirisout
     return
 
 
@@ -645,6 +646,6 @@ label monthly_planning:
     else:
         susan_marina "You obviously have no goal in life. So sad..."
 
-    call events_skip_period from _call_events_skip_period_1
+    scene Ashford_Academy with circleirisout
     return
 

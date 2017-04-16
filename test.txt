@@ -1,0 +1,2372 @@
+﻿--- Tue Jan 19 20:28:30 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored
+﻿--- Tue Jan 19 20:31:37 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in __period: 'Morning'
+﻿--- Tue Jan 19 20:34:16 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in __period: 'Morning'
+﻿--- Tue Jan 19 20:35:03 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in __period: 'Morning'
+trying to create choce:'Office' for period:'None' which has default
+value:'<store._m1_day_planner__Period object at 0x057B6810>'
+﻿--- Tue Jan 19 20:36:39 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in __period: 'Morning'
+trying to create choce:'Office' for period:'' which has default
+value:'<store._m1_day_planner__Period object at 0x06E08D90>'
+﻿--- Tue Jan 19 20:38:42 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in __period: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05888630>' which
+has default value:'<store._m1_day_planner__Period object at
+0x06FD3E50>'
+﻿--- Tue Jan 19 20:43:02 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in currentPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05BD9DB0>' which
+has default value:'None'
+﻿--- Tue Jan 19 20:46:38 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05BF7B70>' which
+has default value:'Morning'
+﻿--- Tue Jan 19 20:52:27 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05BC8610>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x05BC8610>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x05BC8610>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x05BC8610>' which
+has default value:'Evening'
+Jan 2: Monday morning
+
+
+As you enter your new office, you see some guy walking around
+aimlessly.
+
+horst horst
+Hello, can I help you?
+
+???
+Oh, hey man! You must be the new head honcho!
+
+horst horst
+I guess you could call me that. Who are you and what are you doing in
+my office?
+
+Jack Drake
+Oh, yeah... I'm Jack, nice to meet ya. I was just a tad interested in
+who the new guy could be.
+
+horst horst
+Alright Jack, here I am.
+
+Jack Drake
+Mhmm...
+
+horst horst
+...
+
+Jack Drake
+Oh yes, I should probably tell you how stuff works right?
+
+Choice: Yeah, that sounds like a plan.
+Choice: Don't worry about it.
+
+User chose: Yeah, that sounds like a plan.
+
+Jack Drake
+Well, every now and then you'll get back to your office for stuff like
+weekly and monthly planning. But I'm sure Susan will help you with
+that.
+
+Jack Drake
+When you decide to take a peek into your office during school days,
+you most likely will be interrupted on your way here since teachers
+and staff rooms are next to your place.
+
+Jack Drake
+And, yeah I guess that's it...
+
+horst horst
+Well, that sure was a lot of information.
+
+Jack Drake
+Yeah, I know, it's such a hassle. Oh well, I better get back to my
+turf. See ya.
+
+Jan 2: Monday afternoon
+
+
+You enter the classroom and Susan swiftly switches from lecturing to
+introducing you.
+
+Susan
+Listen up class!
+
+Susan
+This is Mr. horst, our new principal. Would you like to introduce
+yourself?
+
+Choice: Make a serious introduction.
+Choice: Make a relaxed introduction.
+Choice: Decline.
+
+User chose: Make a relaxed introduction.
+
+horst horst
+Hello class, my name is horst horst!
+
+
+Class: Hello principal horst!
+
+horst horst
+I'm happy to meet you all and to work here at Ashford Academy. I will
+do my best for both students and teachers alike. If you have any
+problems, don't hesitate to talk to me.
+
+Susan
+Thank you Mr. horst, do we have any questions?
+
+Susan
+Yes, Hina, please introduce yourself to Mr. horst and state your
+question.
+
+Hina Amagi
+Hello principal, my name is Hina Amagi, it's nice to meet you.
+
+Hina Amagi
+I wonder, do you know if there are any plans on building a new pool?
+
+Choice: Yes, as a matter of fact it's one of my first priorities to
+build a new pool.
+Choice: I can't answer that right now.
+Choice: Not at the moment, sorry.
+
+User chose: Yes, as a matter of fact it's one of my first priorities
+to build a new pool.
+
+Hina Amagi
+That's wonderful news! We will be able to train and compete again!
+
+Susan
+Any other questions for Mr. horst?
+
+Susan
+...
+
+Susan
+No questions? Well then, thank you for joining us today principal.
+
+horst horst
+My pleasure.
+
+
+As you leave the room you hear students talking about you and the new
+pool. They seem to think that you're a really nice guy.
+
+Jan 2: Monday evening
+
+
+It's such a drag when two good friends argue, and someone gets caught
+in the middle.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+﻿--- Tue Jan 19 20:55:55 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05A36450>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x05A36450>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x05A36450>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x05A36450>' which
+has default value:'Evening'
+Jan 2: Monday morning
+
+
+As you enter your new office, you see some guy walking around
+aimlessly.
+
+horst horst
+Hello, can I help you?
+
+???
+Oh, hey man! You must be the new head honcho!
+
+horst horst
+I guess you could call me that. Who are you and what are you doing in
+my office?
+
+Jack Drake
+Oh, yeah... I'm Jack, nice to meet ya. I was just a tad interested in
+who the new guy could be.
+
+horst horst
+Alright Jack, here I am.
+
+Jack Drake
+Mhmm...
+
+horst horst
+...
+
+Jack Drake
+Oh yes, I should probably tell you how stuff works right?
+
+Choice: Yeah, that sounds like a plan.
+Choice: Don't worry about it.
+
+User chose: Don't worry about it.
+
+Jack Drake
+That's the spirit! You made me worry there for a second, it's a tad to
+early to get to work, right?
+
+horst horst
+Eh, yeah...
+
+Jack Drake
+Well, I guess I have classes or something to take care of.
+
+horst horst
+Right, good luck with that.
+
+Jack Drake
+Thanks man.
+
+Jan 2: Monday afternoon
+
+
+You enter the classroom and Susan swiftly switches from lecturing to
+introducing you.
+
+Susan
+Listen up class!
+
+Susan
+This is Mr. horst, our new principal. Would you like to introduce
+yourself?
+
+Choice: Make a serious introduction.
+Choice: Make a relaxed introduction.
+Choice: Decline.
+
+User chose: Make a relaxed introduction.
+
+horst horst
+Hello class, my name is horst horst!
+
+
+Class: Hello principal horst!
+
+horst horst
+I'm happy to meet you all and to work here at Ashford Academy. I will
+do my best for both students and teachers alike. If you have any
+problems, don't hesitate to talk to me.
+
+Susan
+Thank you Mr. horst, do we have any questions?
+
+Susan
+Yes, Hina, please introduce yourself to Mr. horst and state your
+question.
+
+Hina Amagi
+Hello principal, my name is Hina Amagi, it's nice to meet you.
+
+Hina Amagi
+I wonder, do you know if there are any plans on building a new pool?
+
+Choice: Yes, as a matter of fact it's one of my first priorities to
+build a new pool.
+Choice: I can't answer that right now.
+Choice: Not at the moment, sorry.
+
+User chose: Yes, as a matter of fact it's one of my first priorities
+to build a new pool.
+
+Hina Amagi
+That's wonderful news! We will be able to train and compete again!
+
+Susan
+Any other questions for Mr. horst?
+
+Susan
+...
+
+Susan
+No questions? Well then, thank you for joining us today principal.
+
+horst horst
+My pleasure.
+
+
+As you leave the room you hear students talking about you and the new
+pool. They seem to think that you're a really nice guy.
+
+Jan 2: Monday evening
+
+
+The shortage of boys in your school means that sometimes conflicts can
+erupt.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+﻿--- Tue Jan 19 20:58:01 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+Jan 3: Tuesday morning
+
+
+Not all students are comfortable with having to see the principal.
+
+Jan 3: Tuesday afternoon
+
+
+Some of your students are getting fed up with their rowdier
+classmates.
+
+Jan 3: Tuesday evening
+
+Girl
+Whoa!
+
+horst horst
+What is it?
+
+Girl
+Can you see the little froggy?
+
+Choice: I can see the froggy alright.
+Choice: Uhm, I'm not sure, is it... green?
+Choice: I don't like animals.
+
+User chose: Uhm, I'm not sure, is it... green?
+
+Girl
+It is!
+
+horst horst
+Yay...
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+Jan 4: Wednesday morning
+
+
+A student accidentally bumps into you on her way to class. She
+hurriedly says she’s sorry and runs away.
+
+Jan 4: Wednesday afternoon
+
+Hina Amagi
+Hello horst!
+
+Choice: Good day.
+Choice: Hello there student!
+Choice: Hey there Amagi!
+
+User chose: Hey there Amagi!
+
+Hina Amagi
+You remember me!
+
+Hina Amagi
+So Mr. horst, is there any news regarding the pool?
+
+horst horst
+I'm sorry, there's nothing new at the moment.
+
+Hina Amagi
+I understand, but please tell me if anything changes!
+
+horst horst
+Will do.
+
+Jan 4: Wednesday evening
+
+
+It's important to drink plenty of liquid during warm and dry
+afternoons.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 5: Thursday morning
+
+
+Workdays can be long and students can be quite demanding. Some "mew
+time" sure hits the spot.
+
+Jan 5: Thursday afternoon
+
+
+It looks like this girl snuck off into the basement for a private
+smoke. Do you...
+
+Choice: Reprimand her
+Choice: Let it go
+Choice: Encourage it
+
+User chose: Encourage it
+
+
+You walk over to her and congratulate her on finding a scluded spot to
+enjoy her smokes.
+
+
+She looks a t you confused, and you tell her she should try smoking
+around school more often.
+
+
+You leave with her trying to figure out why you would say that.
+
+Jan 5: Thursday evening
+
+
+There’s been a fight in the halls between two girls. You break it up
+and apply the school’s punishment policy to them.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 6: Friday morning
+
+
+Not all students are comfortable with having to see the principal.
+
+Jan 6: Friday afternoon
+
+
+It looks like this girl snuck off into the basement for a private
+smoke. Do you...
+
+Choice: Reprimand her
+Choice: Let it go
+Choice: Encourage it
+
+User chose: Let it go
+
+
+You decide to let her have her smokes.
+
+
+As you leave, she sees you and gives you a grateful nod of the head.
+
+Jan 6: Friday evening
+
+
+You witness a confession of young love. Adorable.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 7: Saturday morning
+
+
+A student accidentally bumps into you on her way to class. She
+hurriedly says she’s sorry and runs away.
+
+Jan 7: Saturday afternoon
+
+
+The basement is filled with clutter.
+
+Jan 7: Saturday evening
+
+
+This girl is leaving school with a hop, skip and a jump!
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+Jan 8: Sunday - Weekly planning
+
+Susan
+Today we need to plan what to focus on for the next week. Remember,
+every week you can change your plan.
+
+Choice: Make them behave.
+Choice: We should create the next generation of great minds!
+Choice: Let's create the art and culture of tomorrow!
+Choice: Our students shall become the next Olympic champions!
+
+User chose: Make them behave.
+
+Susan
+Well Mr. horst, I just talked to the board. They said that the Agency
+sends their best wishes, and they wanted me to tell you that the new
+secretary will arrive on monday morning.
+
+horst horst
+The new secretary?
+
+Susan
+Oh, it must have slipped my mind. Since I was assigned by the old
+administration, the board thought it would be better for you to mold
+your own team.
+
+Choice: What about you?
+Choice: Sounds fair.
+
+User chose: What about you?
+
+horst horst
+Sounds a bit unfair, don't you think?
+
+Susan
+Oh, don't worry about me, I'll have enough to do as it is. Sweet of
+you to care though.
+
+Nurse Lia
+Hello Mr. horst. My name is Lia Foster but please call me Lia. I'm the
+school nurse and I keep track of student health.
+
+Choice: Nice meeting you Lia.
+Choice: Nurse, I suddenly feel a bit feverish..
+
+User chose: Nice meeting you Lia.
+
+Nurse Lia
+Same to you Mr. horst.
+
+Nurse Lia
+Anyhow, this week only one student have reported in sick.
+
+horst horst
+Thank you nurse, I look forward meeting you again.
+
+Nurse Lia
+*giggle*
+
+horst horst
+Thank you for getting me up to speed with school administration and
+all. It sure is a long road ahead, but at least now I know a little
+about which direction to take.
+
+Susan
+Glad to be of assistance. Hope your new secretary settles in smoothly.
+
+horst horst
+I'm sure she will.
+
+Susan
+Well, goodbye Mr. horst. And good luck to you.
+
+horst horst
+Thank you.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 8: Sunday morning
+
+
+*knock knock*
+
+horst horst
+Come in.
+
+Nurse Lia
+Hello horst horst, do you have a minute?
+
+Choice: No, I'm sorry, can you take it with Susan?
+Choice: What can I help you with?
+Choice: Anything for you Lia.
+
+User chose: Anything for you Lia.
+
+Nurse Lia
+*giggle* Such a smooth talker...
+
+horst horst
+Well a hard worker as you really deserves it. Only good girls get my
+praise.
+
+Nurse Lia
+Jumping to conclusions are we? You barely know me and you still
+consider me a "good girl"?
+
+horst horst
+With face like yours I have no doubt about it.
+
+Nurse Lia
+*giggle* I'm sorry Mr. horst, but I think I need to get back to my
+office.
+
+horst horst
+I think I want you to stay.
+
+Nurse Lia
+Aww, maybe another time. Bye bye principal!
+
+
+Hmm, she came by just to chat..?
+
+Jan 8: Sunday afternoon
+
+
+The basement is filled with clutter.
+
+Jan 8: Sunday evening
+
+
+Just when you walk out of school you see a girl while a wind gust
+blows up her skirt.
+
+Choice: Look!
+Choice: Look away
+
+User chose: Look away
+
+
+You quickly look away.
+
+Night
+
+
+After a long day of planning you decide to pour yourself a glass of
+Jack Daniels on the rocks.
+
+
+You remember what Susan said so you decide to go and meet you new
+secretary.
+
+Jennifer Adriano
+Hi, I'm Jennifer Adriano from the Agency.
+
+horst horst
+Hello Jennifer, I'm horst horst. Nice to meet you.
+
+Jennifer Adriano
+Nice to meet you to! Susan gave me the quick version on how things run
+around here. I'm sure I'll get the hang of it in a couple of days.
+
+horst horst
+I'm sure you will. Just take your time and get acquainted with the
+principles.
+
+Jennifer Adriano
+Yes sir!
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 10: Tuesday morning
+
+
+A couple of role-playing geeky girls have been called to the
+principals office. An incident involving cutting off the hair of a
+cheerleader calls for a few strict words. The girls stayed in
+character through out the meeting.
+
+Jan 10: Tuesday afternoon
+
+
+It looks like this girl snuck off into the basement for a private
+smoke. Do you...
+
+Choice: Reprimand her
+Choice: Let it go
+Choice: Encourage it
+
+User chose: Let it go
+
+
+You decide to let her have her smokes.
+
+
+You leave without her seeing you.
+
+Jan 10: Tuesday evening
+
+
+This girl is leaving school with a hop, skip and a jump!
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 11: Wednesday morning
+
+
+Not all students are comfortable with having to see the principal.
+
+Jan 11: Wednesday afternoon
+
+
+It looks like this girl snuck off into the basement for a private
+smoke. Do you...
+
+Choice: Reprimand her
+Choice: Let it go
+Choice: Encourage it
+
+User chose: Let it go
+
+
+You decide to let her have her smokes.
+
+
+As you leave, she sees you and gives you a grateful nod of the head.
+
+Jan 11: Wednesday evening
+
+
+Some girls are having a break after class.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 12: Thursday morning
+
+
+A couple of role-playing geeky girls have been called to the
+principals office. An incident involving cutting off the hair of a
+cheerleader calls for a few strict words. The girls stayed in
+character through out the meeting.
+
+Jan 12: Thursday afternoon
+
+
+It looks like this girl snuck off into the basement for a private
+smoke. Do you...
+
+Choice: Reprimand her
+Choice: Let it go
+Choice: Encourage it
+
+User chose: Let it go
+
+
+You decide to let her have her smokes.
+
+
+As you leave, she sees you and gives you a grateful nod of the head.
+
+Jan 12: Thursday evening
+
+
+Just when you walk out of school you see a girl while a wind gust
+blows up her skirt.
+
+Choice: Look!
+Choice: Look away
+
+User chose: Look!
+
+
+You see a hint of white panties while the girl pushes down her skirt
+and screams pervert at you.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 13: Friday morning
+
+
+*knock knock*
+
+horst horst
+It's open, please come in.
+
+horst horst
+Nurse Lia.
+
+Nurse Lia
+Principal horst.
+
+Choice: So we are on first name basis now?
+Choice: So what's on your mind?
+Choice: Look at that eye candy!
+
+User chose: Look at that eye candy!
+
+Nurse Lia
+I could say the same about you Mr. horst.
+
+horst horst
+Honestly, I would rather look at you than myself.
+
+Nurse Lia
+*giggle* I have noticed. It's the nurse outfit right?
+
+horst horst
+To be honest Lia, I am sure you would look great in any outfit.
+
+Nurse Lia
+I will make sure to always keep an "outift" on then. Shame, it's quite
+relaxing to slip out of it now and then.
+
+horst horst
+Haha, Isn't birthday suit considered an "outfit"?
+
+Nurse Lia
+Oh principal, are you trying to get me undressed?
+
+horst horst
+What if I am?
+
+Nurse Lia
+*giggle* I guess I better get back to my office before this turns into
+something... More interesting... Mhm, see you around principal.
+
+Jan 13: Friday afternoon
+
+
+Those modern bathing suits keep moving upward. Better take time to
+pull and release.
+
+Jan 13: Friday evening
+
+Girl
+Whoa!
+
+horst horst
+What is it?
+
+Girl
+Can you see the little froggy?
+
+Choice: I can see the froggy alright.
+Choice: Uhm, I'm not sure, is it... green?
+Choice: I don't like animals.
+
+User chose: I can see the froggy alright.
+
+Girl
+* giggle *
+
+Night
+
+
+Your phone's ringing.
+
+horst horst
+Hello?
+
+Dr. Kent
+Mr. horst? I'm doctor Kent from the County Hospital. Sorry to disturb
+you at this hour but there has been an accident.
+
+horst horst
+An accident?
+
+Dr. Kent
+Yes, I'm sorry but the girl doesn't seem to have any relatives in town
+so I was hoping that perhaps you could come here and -
+
+horst horst
+I'm sorry doctor but which girl are we talking about?
+
+Dr. Kent
+Oh, how clumsy of me. I'm terribly sorry, I should have... She had a
+briefcase with documents that carried Ashford's header and an ID that
+-
+
+horst horst
+Which girl doctor?!
+
+Dr. Kent
+Her name is Jennifer. The Id says: Jennifer Adriano, but it doesn't
+say if she's -
+
+horst horst
+My god...
+
+Dr. Kent
+Obviously you must know her and -
+
+horst horst
+She was my secretary.
+
+Dr. Kent
+Oh, I... I'm truly sorry Mr. horst.
+
+horst horst
+I'm on my way.
+
+horst horst
+What happened?
+
+Dr. Kent
+Looks like a hit and run. I'm sorry, but the injuries were far too
+severe for us to be able to save her. She was in a real mess when she
+came in.
+
+horst horst
+...
+
+Dr. Kent
+I understand she was your secretary?
+
+horst horst
+Yes, she started working for me just a few days ago.
+
+Dr. Kent
+Once again, you have my condolences.
+
+horst horst
+Thank you.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 14: Saturday morning
+
+
+A girl rushes into your office without knocking or announcing herself.
+She's the editor of the school's newspaper.
+
+Girl
+Get your brand new issue of the Ashford Gazette, Principal! Breaking
+news and shocking investigations by your favorite reporter!
+
+
+Instead of breaking news, what this rag really focusses on is gossip,
+urban legends and cheap fan fiction. The problem page is pretty
+popular with heartbroken students, though.
+
+horst horst
+*sigh* What's on the front page this time...
+
+Girl
+Shocking news! Students have been seen kissing in school! On the
+mouth! We got this from a reliable source...
+
+horst horst
+All right, whatever...
+
+Jan 14: Saturday afternoon
+
+
+Wet girls are good girls.
+
+Jan 14: Saturday evening
+
+
+Some girls are having a break after class.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+Jan 15: Sunday - Weekly planning
+
+horst horst
+I'm glad you stayed around. I really have no idea what I would have
+done if you hadn't.
+
+Susan
+I - I don't know what to say. That poor girl...
+
+horst horst
+I know, feels surreal.
+
+Susan
+Well, I'll be staying for as long as you need me.
+
+horst horst
+That's good to know, thank you.
+
+Susan
+...
+
+horst horst
+Well, as the song says, the show must go on. We must focus on the work
+at hand.
+
+Susan
+I guess so.
+
+horst horst
+Thank you Susan.
+
+Susan
+Well Ashford, here we go again.
+
+Choice: Make them behave.
+Choice: We should create the next generation of great minds!
+Choice: Let's create the art and culture of tomorrow!
+Choice: Our students shall become the next Olympic champions!
+
+User chose: Let's create the art and culture of tomorrow!
+
+Susan
+Very well, I will inform the rest of the teachers.
+
+Nurse Lia
+Hello principal. This week 4 students have called in sick.
+
+horst horst
+Thank you Lia. Keep up the good work.
+
+Nurse Lia
+My pleasure Mr. horst.
+
+Info
+You think to yourself...
+
+horst horst
+I think we should focus a bit more on basic education.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 15: Sunday morning
+
+
+There come ungrateful days when you're a teacher, days you wish you'd
+never left bed.
+
+Jan 15: Sunday afternoon
+
+
+Try to leave that competitive feeling behind once practice is over.
+
+Jan 15: Sunday evening
+
+
+There’s been a fight in the halls between two girls. You break it up
+and apply the school’s punishment policy to them.
+
+Night
+
+
+After a long day of planning you decide to pour yourself a glass of
+Teerenpeli on the rocks.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 16: Monday morning
+
+
+A girl rushes into your office without knocking or announcing herself.
+She's the editor of the school's newspaper.
+
+Girl
+Get your brand new issue of the Ashford Gazette, Principal! Breaking
+news and shocking investigations by your favorite reporter!
+
+
+Instead of breaking news, what this rag really focusses on is gossip,
+urban legends and cheap fan fiction. The problem page is pretty
+popular with heartbroken students, though.
+
+horst horst
+*sigh* What's on the front page this time...
+
+Girl
+Shocking news! Students have been seen kissing in school! On the
+mouth! We got this from a reliable source...
+
+horst horst
+All right, whatever...
+
+Jan 16: Monday afternoon
+
+horst horst
+That could raise some questions from the teachers council, what should
+I do?
+
+Choice: Stop fooling around like that!
+Choice: Just smile and let it pass.
+
+User chose: Just smile and let it pass.
+
+
+When they see your smile they suddenly stop.
+
+Jan 16: Monday evening
+
+Girl
+Whoa!
+
+horst horst
+What is it?
+
+Girl
+Can you see the little froggy?
+
+Choice: I can see the froggy alright.
+Choice: Uhm, I'm not sure, is it... green?
+Choice: I don't like animals.
+
+User chose: I can see the froggy alright.
+
+Girl
+* giggle *
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x062A7D50>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+﻿--- Thu Jan 21 19:10:16 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x056A3370>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x056A3370>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x056A3370>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x056A3370>' which
+has default value:'Evening'
+﻿--- Thu Jan 21 19:27:20 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x0570A370>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x0570A370>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x0570A370>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x0570A370>' which
+has default value:'Evening'
+﻿--- Thu Jan 21 19:28:07 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x0623BB30>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x0623BB30>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x0623BB30>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x0623BB30>' which
+has default value:'Evening'
+﻿--- Thu Jan 21 20:10:55 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+Jan 29: Monday morning
+
+
+As you enter your new office, you see some guy walking around
+aimlessly.
+
+horst horst
+Hello, can I help you?
+
+???
+Oh, hey man! You must be the new head honcho!
+
+horst horst
+I guess you could call me that. Who are you and what are you doing in
+my office?
+
+Jack Drake
+Oh, yeah... I'm Jack, nice to meet ya. I was just a tad interested in
+who the new guy could be.
+
+horst horst
+Alright Jack, here I am.
+
+Jack Drake
+Mhmm...
+
+horst horst
+...
+
+Jack Drake
+Oh yes, I should probably tell you how stuff works right?
+
+Choice: Yeah, that sounds like a plan.
+Choice: Don't worry about it.
+
+User chose: Don't worry about it.
+
+Jack Drake
+That's the spirit! You made me worry there for a second, it's a tad to
+early to get to work, right?
+
+horst horst
+Eh, yeah...
+
+Jack Drake
+Well, I guess I have classes or something to take care of.
+
+horst horst
+Right, good luck with that.
+
+Jack Drake
+Thanks man.
+
+Jan 29: Monday afternoon
+
+
+You enter the classroom and Susan swiftly switches from lecturing to
+introducing you.
+
+Susan
+Listen up class!
+
+Susan
+This is Mr. horst, our new principal. Would you like to introduce
+yourself?
+
+Choice: Make a serious introduction.
+Choice: Make a relaxed introduction.
+Choice: Decline.
+
+User chose: Make a relaxed introduction.
+
+horst horst
+Hello class, my name is horst horst!
+
+
+Class: Hello principal horst!
+
+horst horst
+I'm happy to meet you all and to work here at Ashford Academy. I will
+do my best for both students and teachers alike. If you have any
+problems, don't hesitate to talk to me.
+
+Susan
+Thank you Mr. horst, do we have any questions?
+
+Susan
+Yes, Hina, please introduce yourself to Mr. horst and state your
+question.
+
+Hina Amagi
+Hello principal, my name is Hina Amagi, it's nice to meet you.
+
+Hina Amagi
+I wonder, do you know if there are any plans on building a new pool?
+
+Choice: Yes, as a matter of fact it's one of my first priorities to
+build a new pool.
+Choice: I can't answer that right now.
+Choice: Not at the moment, sorry.
+
+User chose: Yes, as a matter of fact it's one of my first priorities
+to build a new pool.
+
+Hina Amagi
+That's wonderful news! We will be able to train and compete again!
+
+Susan
+Any other questions for Mr. horst?
+
+Susan
+...
+
+Susan
+No questions? Well then, thank you for joining us today principal.
+
+horst horst
+My pleasure.
+
+
+As you leave the room you hear students talking about you and the new
+pool. They seem to think that you're a really nice guy.
+
+Jan 29: Monday evening
+
+
+Having your lunch outside in the sun surely is great!
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Sports field' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Library' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create choce:'Cafeteria' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+trying to create choce:'Dormitory' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+trying to create choce:'Bath' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 30: Tuesday morning
+
+
+Not all students are comfortable with having to see the principal.
+
+Jan 30: Tuesday afternoon
+
+Girl
+Principal horst horst! Thank you very much for getting us our very own
+café!
+
+horst horst
+Whoa, you're welcome!
+
+Girl
+I really am a cake and cookie kind'a girl! I better be careful or I'm
+bound to look like a sumo-wrestler in just a couple of weeks!
+
+horst horst
+What, that's... You be careful then...
+
+Girl
+I will <3
+
+Jan 30: Tuesday evening
+
+Girl
+KYAAAAAH!
+
+
+An embarrassed cry catches your attention. You spot a young boy
+running off having just flipped this girl's skirt up.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Sports field' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create choce:'Library' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create choce:'Cafeteria' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+trying to create choce:'Dormitory' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+trying to create choce:'Bath' for
+period:'<renpy.python.RevertableObject object at 0x05B8A890>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 31: Wednesday morning
+
+horst horst
+Well, even teachers need a break sometimes.
+
+Jan 31: Wednesday afternoon
+
+
+These two are furiously making out in the middle of the class.
+
+Choice: Punish them
+Choice: Smile and move on
+
+User chose: Smile and move on
+
+
+You wave and move on. Other students realize you don’t care if they
+kiss in class, and more are starting to do it.
+
+Jan 31: Wednesday evening
+
+
+In the outskirts of the school grounds, you see two girls standing
+real close.
+
+
+Suddenly, one leans forward and gives the other a passionate kiss.
+
+
+After a short struggle, the other one gives in and lets her tongue
+answer the invitation.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+Feb 1: Thursday - Monthly planning
+
+Susan
+The first of every month we organize something special for the
+students. What would you like us to do?
+
+Choice: Science fair
+Choice: Fitness training
+Choice: Visit museum
+Choice: Raise money
+Choice: School trip
+
+User chose: Raise money
+
+Susan
+This is what we can do to raise money.
+
+Choice: Clean the streets
+Choice: Cancel
+
+User chose: Clean the streets
+
+Susan
+Our students raised 106$ but didn't enjoy the task.
+
+horst horst
+And this months paperwork is done.
+
+Susan
+Mr. horst every month we receive feedback from students, teachers and
+parents organizations. We use this feedback to set up a list of goals
+for our academy to strive for.
+
+Susan
+I try to order all the feedback and create a list where we choose one
+goal to focus on every month. Failing to achieve the set goal will
+result in negative publicity and hurt the schools reputation.
+
+Susan
+Please also keep in mind that you can influence how high we set each
+and every goal.
+
+Susan
+So Mr. horst, what goal will we have for this month?
+
+Choice: Building club rooms
+Choice: Morale
+Choice: Behavior
+
+﻿--- Thu Jan 21 20:21:52 2016
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Sports field' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Library' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Cafeteria' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Dormitory' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Bath' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 31: Wednesday morning
+
+
+You’re reading some reports as you’re walking to your office when you
+collide with a teacher. You drop into a rather compromising position.
+
+Choice: Nice panties
+Choice: Sorry.
+
+User chose: Nice panties
+
+Teacher
+Oh... thank you.
+
+
+You help her up and she continues on her way.
+
+Jan 31: Wednesday afternoon
+
+
+A scraping noise prompts you to peek into a classroom that should be
+empty this time of day. You see a faintly blushing girl lying nearly
+nude atop some desks. Looks like someone is a budding exhibitionist!
+
+Jan 31: Wednesday evening
+
+
+You meet some girls talking and giggling about boys and dates.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+Feb 1: Thursday - Monthly planning
+
+Susan
+The first of every month we organize something special for the
+students. What would you like us to do?
+
+Choice: Science fair
+Choice: Fitness training
+Choice: Visit museum
+Choice: Raise money
+Choice: School trip
+
+User chose: Visit museum
+
+Susan
+I will organize this horst.
+
+horst horst
+And this months paperwork is done.
+
+Susan
+Mr. horst every month we receive feedback from students, teachers and
+parents organizations. We use this feedback to set up a list of goals
+for our academy to strive for.
+
+Susan
+I try to order all the feedback and create a list where we choose one
+goal to focus on every month. Failing to achieve the set goal will
+result in negative publicity and hurt the schools reputation.
+
+Susan
+Please also keep in mind that you can influence how high we set each
+and every goal.
+
+Susan
+So Mr. horst, what goal will we have for this month?
+
+Choice: Behavior
+Choice: Behavior
+
+User chose: Behavior
+
+Choice: [goal_stat]: [goal_difficulty3]
+Choice: [goal_stat]: [goal_difficulty2]
+Choice: [goal_stat]: [goal_difficulty1]
+
+User chose: [goal_stat]: [goal_difficulty3]
+
+Susan
+Our goal for the next month is for behavior to reach 25.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Sports field' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Library' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Cafeteria' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Dormitory' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Bath' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Sports field' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Library' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Cafeteria' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Dormitory' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Bath' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'
+Jan 31: Wednesday morning
+
+
+Knock Knock
+
+
+You stir up from your seat, surprised by the knocking on the door.
+
+horst horst
+Come in?
+
+
+The door opens and a lady in a blue yakata walks in. Her mature and
+innocent appearance is matched with a figure that's heavy in all of
+the right places.
+
+Carol Brown
+Hello Mr. horst. I am Carol Brown. Please let me speak with you? This
+is very important.
+
+Choice: You see a distressed women and decide to listen to her.
+Choice: You wonder how Susan let someone get to your door without
+notifying you first.
+
+User chose: You wonder how Susan let someone get to your door without
+notifying you first.
+
+horst horst
+I'm sorry Mrs. Brown, but I am very preoccupied right now. Please make
+an appointment with Susan, my scretary, and we can meet again soon.
+
+
+You go to lead her out the door, but she doesn't move.
+
+Carol Brown
+Please Mr. horst. I'm sorry for bothering you, but I must speak with
+you. I can't wait any longer.
+
+
+You become a bit flustered that she was on the verge of tears. She
+seems very desparate and it would be a good idea to let her stay than
+let her cry as she leave.
+
+horst horst
+Ok ok. It's alright. I'll listen to what you have to say.
+
+Carol Brown
+Well, I have a son and I wish to enter him into your academy.
+
+horst horst
+Well that is a simple process. All your son has to do is pass our exam
+and he can enter.
+
+Carol Brown
+Well that's the thing. He has taken the test and failed, but I know my
+son is a bright student. I know that if he transfers here he will do
+very well in school. The teachers at his school are so horrible and
+he's so sad there. I'm sorry that he has to go to the school he's
+going to now and all I see is him failing. I know he's so smart and it
+makes me very sad...
+
+
+You can hear her voice starting to crack.
+
+horst horst
+I'm sorry for your son Mrs. Brown. Education is essential to a
+fulfilling life and it's unfortunate that it's not taught correctly
+everywhere.
+
+Carol Brown
+You understand then, right? How important education is? Will you
+please accept my son into your academy?
+
+horst horst
+I'm afraid, however, that there are rules and your son has to go
+through the examination process like everyone else. While our goal
+here at Ashford Academy is to promote a complete and thorough
+education, if your son can't handle it then it will be wasted.
+
+Carol Brown
+Please I beg of you. I am a single mom running a small restaurant and
+my son only haves me. I try to keep my son as happy as possible, but I
+don't have the time to teach him at home. I know what I'm about to say
+is a bit forward, but I'm willing to make a small donation to your
+school and I can send someone to help teach cooking if my son is
+accepted...
+
+Choice: While you might be doing better academically recently, a
+little bit of help can go a long way...
+Choice: Maybe you should visit her home...
+
+User chose: While you might be doing better academically recently, a
+little bit of help can go a long way...
+
+horst horst
+Well if you put it that way, I'm sure the rules can be bent a little.
+It would be a shame to see such a gifted child not reach his full
+potential.
+
+Carol Brown
+Thank you! Thank you so much! I'll never forget this.
+
+
+You're glad to have helped someone and have a little something in
+return for your good deed.
+
+Jan 31: Wednesday afternoon
+
+
+You see a student hard at work in the cooking club.
+
+Jan 31: Wednesday evening
+
+
+A young student shares her lunch break with a beastly cute cat.
+
+Night
+
+
+It's getting late, so you decide to go to sleep.
+
+Feb 1: Thursday - Monthly planning
+
+Susan
+The first of every month we organize something special for the
+students. What would you like us to do?
+
+Choice: Science fair
+Choice: Standard tests
+Choice: Fitness training
+Choice: Sports Tourney
+Choice: Visit museum
+Choice: Art Exhibit
+Choice: Raise money
+Choice: School trip
+
+User chose: Sports Tourney
+
+Susan
+The Ashford Volleyball Team did great and won every match including
+the finals!
+
+horst horst
+...and sign there. Ah, all paperwork done for today.
+
+Susan
+Mr. horst every month we receive feedback from students, teachers and
+parents organizations. We use this feedback to set up a list of goals
+for our academy to strive for.
+
+Susan
+I try to order all the feedback and create a list where we choose one
+goal to focus on every month. Failing to achieve the set goal will
+result in negative publicity and hurt the schools reputation.
+
+Susan
+Please also keep in mind that you can influence how high we set each
+and every goal.
+
+Susan
+So Mr. horst, what goal will we have for this month?
+
+Susan
+Congratulations, you have achieved every monthly goal available.
+
+trying to create period:Morning
+period 'Morning' created
+period name 'Morning' stored in cPeriod: 'Morning'
+trying to create choce:'Office' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Sports field' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Gym' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create choce:'Library' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Morning'
+trying to create period:Afternoon
+period 'Afternoon' created
+period name 'Afternoon' stored in cPeriod: 'Afternoon'
+trying to create choce:'Class' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Pool' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create choce:'Cafeteria' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Afternoon'
+trying to create period:Evening
+period 'Evening' created
+period name 'Evening' stored in cPeriod: 'Evening'
+trying to create choce:'School grounds' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Dormitory' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Bath' for
+period:'<renpy.python.RevertableObject object at 0x0564FB10>' which
+has default value:'Evening'
+trying to create choce:'Basement' for period:'Afternoon' which has
+default value:'Evening'

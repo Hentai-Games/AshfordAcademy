@@ -52,46 +52,46 @@ init:
     $ event("fla_office13", "act == 'office' and deviance > 40", event.choose_one('office'), priority=200)
 
 label fla_office1:
-    
+
     scene bg fla_office1 with fade
-    "As you walk to your office you are glad to see the halls filled with happy students."
+    "As you walk to your office, you are glad to see the halls filled with happy students."
     $ morale +=1
     return
-    
+
 label fla_office2:
-    
+
     scene bg fla_office2 with fade
-    "You look out your window to see a blushing girl hand delivering a love note."
+    "You look out your window to see a blushing girl hand-delivering a love note."
     return
-    
+
 label fla_office3:
-    
+
     scene bg fla_office3_1 with flash
-    "You leave your office and smack right into a student. You both go down and end up in a comprimising position."
-        
+    "You leave your office and smack right into a student. You both go down and end up in a compromising position."
+
     if deviance < 30:
         scene bg fla_office3_2
         girl "EEEEEEEEEEEEK!"
-        pov "Sorry Sorry Sorry!"
+        pov "Sorry! Sorry! Sorry!"
         $ morale -=1
     else:
         scene bg fla_office3_3
-        girl "Ooooh, [povTitle][povLastName] your so bold!"
-        pov "Ha Ha! Sorry about that, let me help you up."
+        girl "Ooooh, [povTitle][povLastName]! You're so bold!"
+        pov "Ha Ha! Sorry about that! Let me help you up."
         $ morale +=1
     return
-    
+
 label fla_office4:
-    
+
     scene bg fla_office4 with fade
-    "Looks like these two girls had a little accident on the stairs. Fortunatly no one seems hurt."
+    "Looks like these two girls had a little accident on the stairs. Fortunately, no one seems hurt."
     $ inhibition -=1
     return
-    
+
 label fla_office5:
-    
+
     scene bg fla_office5 with fade
-    girl "And while the school has made great strides in the last few months we still have a long way to go!"
+    girl "And while the school has made great strides in the last few months, we still have a long way to go!"
     girl "I'm sure I can count on all of you to give our principal your full support!"
     "The assembly bursts into cheers."
     $ morale +=1
@@ -99,12 +99,12 @@ label fla_office5:
     if renpy.random.randint(1, 3) == 1:
         $ reputation += 1
     return
-    
+
 label fla_office6:
-    
+
     $ r=renpy.random.randint(1, 5)
     image bg fla_office6 = ConditionSwitch("r==1","mods/Flagon1/Office/fla_office6_1.jpg","r==2","mods/Flagon1/Office/fla_office6_2.jpg","r==3","mods/Flagon1/Office/fla_office6_3.jpg","r==4","mods/Flagon1/Office/fla_office6_4.jpg","r==5","mods/Flagon1/Office/fla_office6_5.jpg")
-    
+
     scene bg fla_office6 with fade
     "A quick check of the detention room shows that things seem to be going well."
     girls "Aaaah, AAaaah, AAAAAAAAAAAAH YES!"
@@ -113,59 +113,59 @@ label fla_office6:
     if renpy.random.randint(1, 3) == 1:
         $ deviance+= 5
     return
-    
+
 label fla_office7:
-    
+
     $ r=renpy.random.randint(1, 3)
     image bg fla_office7 = ConditionSwitch("r==1","mods/Flagon1/Office/fla_office7_1.jpg","r==2","mods/Flagon1/Office/fla_office7_2.jpg","r==3","mods/Flagon1/Office/fla_office7_3.jpg")
-    
+
     scene bg fla_office7 with fade
-    "With your students help, the paperwork has become much less of a burden."
+    "With your student's help, the paperwork has become much less of a burden."
     $ deviance +=1
     return
-    
+
 label fla_office8:
-    
+
     scene bg fla_office8 with fade
     "This student is helping you make a new educational video for health class."
     girl "And as you, AH!, insert the vibrator be sure to tweak the nipple..."
     return
-    
+
 label fla_office9:
-    
+
     scene bg fla_office9 with fade
-    "These girls have come to your office to show off thier uniforms."
+    "These girls have come to your office to show off their uniforms."
     if renpy.random.randint(1, 3) == 1:
         $ deviance+= 5
     return
-    
+
 label fla_office10:
-    
+
     scene bg fla_office10 with fade
     "Your teachers are enjoying No Pants Day, the greatest of all days."
     $ inhibition -=1
     return
-    
+
 label fla_office11:
-    
+
     scene bg fla_office11 with fade
     girl "And as we move into the future *pant* *pant* it's important to remember the importance of... of..."
     girl "I'm cumming! CUMMMING! YEEEEEEEEEES!"
     $ inhibition -=1
     $ deviance +=1
     return
-    
+
 label fla_office12:
-    
+
     scene bg fla_office12 with fade
-    teacher "Alright boys, you got the highest marks on the test, so here's your reward!"
+    teacher "All right, boys. You got the highest marks on the test so here's your reward!"
     guy "Yay!"
     return
-    
+
 label fla_office13:
-    
+
     scene bg fla_office13 with fade
-    "It's important to know how to use equipment safely."
-    teacher "Alright, it's important to make sure the dildo is properly lubricated before use. I want you to drop your panties while I suck on this a bit."
+    "It's important to know how to safely use equipment."
+    teacher "All right, it's important to make sure the dildo is properly lubricated before use. I want you to drop your panties while I suck on this a bit."
     $ deviance +=1
     return

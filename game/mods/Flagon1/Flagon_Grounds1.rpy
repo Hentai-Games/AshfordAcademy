@@ -104,198 +104,198 @@ init:
     $ event("fla_grounds39", "act == 'school_grounds' and inhibition < 70 and uniform == 'sexy_uniform'", event.choose_one('school_grounds'), priority=200)
     $ event("fla_grounds40", "act == 'school_grounds' and inhibition < 75", event.choose_one('school_grounds'), priority=200)
     $ event("fla_grounds41", "act == 'school_grounds' and deviance > 15 and athletics > 20 and academics > 30", event.choose_one('school_grounds'), priority=200)
-    
+
 ##Low Sex Events
 
 label fla_grounds1:
-    
+
     scene bg fla_grounds1 with fade
-    "The setting sun and blossoming cherry trees perfectly complement this girls beauty. The wind gently lifting her skirt doesn't hurt though."
+    "The setting sun and blossoming cherry trees perfectly complement this girl's beauty. The wind gently lifting her skirt doesn't hurt, though."
     $ inhibition -=1
     return
-    
+
 label fla_grounds2:
 
     scene bg fla_grounds2 with fade
     "Riding a bike is an excellent way to stay in shape."
     $ athletics +=1
     return
-    
+
 label fla_grounds3:
-    
+
     scene bg fla_grounds3 with fade
-    "Several boys are taking pictures of the girls. They seem less than pleased about this."
+    "Several boys are taking pictures of some girls. The girls seem less than pleased about this."
     $ morale -=1
     $ behavior -=1
     return
-    
+
 label fla_grounds4:
-    
+
     scene bg fla_grounds4 with fade
-    "It warms your heart to know that your students are actually happy to come to classes."
+    "It warms your heart to know that your students are actually happy to come to school."
     $ morale +=1
     return
-    
+
 label fla_grounds5:
-    
+
     $ r=renpy.random.randint(1,2)
     image bg fla_grounds5 = ConditionSwitch("r==1","mods/Flagon1/Grounds/fla_grounds5_1.jpg","r==2","mods/Flagon1/Grounds/fla_grounds5_2.jpg")
-    
+
     scene bg fla_grounds5 with fade
-    "You see a group of students taking advantage of the nice weather to have thier lunch outdoors."
+    "You see a group of students taking advantage of the nice weather by have their lunch outdoors."
     $ morale+=1
     return
-    
+
 label fla_grounds6:
-    
+
     scene bg fla_grounds6 with fade
     girl "Yeah, this school is way better than my last!"
     $ morale +=1
     return
-    
+
 label fla_grounds8:
-    
+
     scene bg fla_grounds8 with fade
-    "The heats been pretty nasty lately, but your students don't let it get them down!"
+    "The heat's been pretty nasty lately, but your students don't let it get them down!"
     $ morale +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds9:
-    
+
     scene bg fla_grounds9 with fade
-    "The heat is so bad that students will do almost anything to cool down, even to the point of removing layers of clothing."
+    "The heat is so bad that students will do almost anything to cool down. Even to the point of removing layers of clothing."
     $ inhibition -=1
     $ deviance +=1
     if renpy.random.randint(1, 4) == 1:
         $ deviance += 5
     return
-    
+
 label fla_grounds10:
-    
+
     scene bg fla_grounds10 with flash
     pov "OOOOF! Careful there young lady!"
     "Heh Heh Heh... kitty!"
     return
-    
+
 label fla_grounds11:
     scene bg fla_grounds11 with fade
     "On your way home you spot a couple of kids playing around."
     return
-    
+
 label fla_grounds12:
-    
+
     scene bg fla_grounds12 with fade
     "Due to your school having more girls than boys, some girls have had to learn the value of sharing."
     return
-    
+
 label fla_grounds13:
-    
+
     scene bg fla_grounds13 with fade
-    "They say the way to a mans heart is through his stomach. But you bet the short skirt doesn't hurt."
+    "They say the way to a man's heart is through his stomach, but you bet the short skirt doesn't hurt."
     return
-    
+
 label fla_grounds14:
-    
+
     scene bg fla_grounds14 with fade
     "You spot a happy looking couple on their way to lunch."
     $ morale +=1
     return
-    
+
 label fla_grounds15:
-    
+
     scene bg fla_grounds15 with fade
     "While your students seem depressed by the rain, you think it might just have some benefits."
     $ morale -=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds16:
-    
+
     scene bg fla_grounds16 with fade
     girl "KYAAAAAH!"
-    "An embarassed cry catches your attention, and you spot a young boy running off, having just flipped this girls skirt up."
+    "An embarrassed cry catches your attention.  You spot a young boy running off having just flipped this girl's skirt up."
     $ behavior -=1
     $ inhibition +=1
     if renpy.random.randint(1, 4) == 1:
         $ deviance += 5
     return
-    
+
 label fla_grounds17:
-    
+
     scene bg fla_grounds17 with fade
-    "When you stop at the mall to pick up a few things, you spot a couple of your students out on a date. Looks like the poor guy is being used as a baggage horse."
+    "When you stop at the mall to pick up a few things, you spot a couple of your students out on a date. Looks like the poor guy is being used as a pack mule."
     return
-    
+
 label fla_grounds18:
-    
+
     scene bg fla_grounds18 with fade
     "Two students race home, laughing. Looks like they had a good day at school."
     $ morale +=1
     return
-    
+
 label fla_grounds19:
-    
+
     scene bg fla_grounds19 with fade
-    "This girl slipped in the rain and twisted her ankle. Fortunatly, your students are always willing to help eachother."
+    "This girl slipped in the rain and twisted her ankle. Fortunately, your students are always willing to help each other."
     $ behavior +=1
     return
-    
+
 label fla_grounds20:
-    
+
     scene bg fla_grounds20 with fade
-    "Sexy Uniforms plus Rainy Weather equals Good Times!"
+    "Sexy Uniforms + Rainy Weather = Good Times!"
     $ inhibition -=1
     return
-    
+
 label fla_grounds21:
-    
+
     scene bg fla_grounds21_1 with fade
-    "The roof is a popular place for love confessions"
+    "The roof is a popular place for love confessions."
     scene bg fla_grounds21_2
     "And this one seems to be going very well!"
     $ morale +=1
     return
-    
+
 label fla_grounds22:
-    
+
     scene bg fla_grounds22 with fade
-    "One of your students interupts your cloud watching. Still, given the view you can't complain."
+    "One of your students interrupts your cloud watching. Still, given the view, you can't complain."
     $ inhibition -=1
     return
-    
+
 label fla_grounds23:
-    
+
     scene bg fla_grounds23 with fade
     "You spot a student sitting alone on the swing set. She looks kind of lonely."
     $ morale -=1
     return
-    
+
 label fla_grounds24:
-    
+
     scene bg fla_grounds24 with fade
-    girl "Say AHHHH."
+    girl "Say 'AHHH'."
     $ deviance +=1
     return
-    
+
 label fla_grounds25:
-    
+
     scene bg fla_grounds25 with fade
-    "These girls just started dating recently."
+    "These girls just recently started dating."
     $ inhibition -=1
     return
-    
+
 label fla_grounds26:
-    
+
     scene bg fla_grounds26 with fade
     "The shortage of boys in your school means that sometimes conflicts can erupt."
     $ behavior -=1
     return
-    
+
 ## High Sex Events
 
 label fla_grounds27:
-    
+
     scene bg fla_grounds27 with fade
     guy "Vote for me in the school council election and I promise that no one will go without sex again!"
     $ inhibition -=1
@@ -304,75 +304,75 @@ label fla_grounds27:
     if renpy.random.randint(1, 3) == 1:
         $ deviance += 5
     return
-    
+
 label fla_grounds28:
-    
+
     $ r=renpy.random.randint(1,3)
     image bg fla_grounds28 = ConditionSwitch("r==1","mods/Flagon1/Grounds/fla_grounds28_1.jpg","r==2","mods/Flagon1/Grounds/fla_grounds28_2.jpg","r==3","mods/Flagon1/Grounds/fla_grounds28_3.jpg")
-    
+
     scene bg fla_grounds28 with fade
     "As girls get more and more horny, discrete sex toys are becoming more popular."
     $ deviance +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds29:
-    
+
     scene bg fla_grounds29 with fade
-    "Riding a bike to school is a great way to stay in shape. But make sure to take care of your equipment."
+    "Riding a bike to school is a great way to stay in shape, but make sure to take care of your equipment."
     $ inhibition -=1
     $ athletics +=1
     return
-    
+
 label fla_grounds30:
-    
+
     scene bg fla_grounds30 with fade
-    "Some girls have started going around without panties. It's seems to give them quite the thrill."
+    "Some girls have started going around without panties. It seems to give them quite the thrill."
     $ inhibition -=1
     return
-    
+
 label fla_grounds31:
-    
+
     scene bg fla_grounds31 with fade
-    "The sound of moans echoing through the nearby forest drew you to this scene. Looks like one of your teachers let herself be overwhelmend by her lust."
-    "Unfortunatly it seems your not the only person who noticed the noise."
+    "The sound of moans echoing through the nearby forest drew you to this scene. Looks like one of your teachers let herself be overwhelmed by her lust."
+    "Unfortunately, it seems you're not the only person who noticed the noise."
     $ deviance +=2
     $ reputation -=1
     if renpy.random.randint(1, 2) == 1:
         $ deviance += 5
     return
-    
+
 label fla_grounds32:
-    
+
     scene bg fla_grounds32 with fade
-    "These two students couldn't wait to find a good spot and have begun giving eachother handjobs right in the hallway."
+    "These two students couldn't wait to find a good spot and began masturbating each other right in the hallway."
     $ behavior -=1
     $ deviance +=1
     $ inhibition -=1
     if renpy.random.randint(1, 3) == 1:
         $ deviance += 5
     return
-    
+
 label fla_grounds33:
-    
+
     scene bg fla_grounds33 with fade
-    "Your students love of exhibitionism has gotten to the point where looking in any random window is likely to get you a good show."
+    "Your students' love of exhibitionism has gotten to the point where looking in any random window is likely to get you a good show."
     $ deviance +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds34:
-    
+
     scene bg fla_grounds34_1 with fade
-    "The familiar sounds of sex have led you to the schools rooftop, where a couple of students are going at it."
+    "The familiar sounds of sex have led you to the school's rooftop where a couple of students are going at it."
     menu:
         "Stop them":
-            pov "Alright, that's quite enough of that! Get dressed and meet me in my office!"
+            pov "All right, that's quite enough of that! Get dressed and meet me in my office!"
             $ deviance -=1
             $ morale -=1
         "Let them continue":
             scene bg fla_grounds34_2
-            "Unfortunatly other people are quickly attracted by the sounds. To your suprise this isn't enough to stop the couple, who continue to climax before leaving"
+            "Unfortunately, other people are quickly attracted by the sounds. To your surprise, this isn't enough to stop the couple who continue to finish climaxing before leaving."
             girl "I can't believe they did that in public!"
             guy "So indecent!"
             girl2 "So bold!"
@@ -380,62 +380,62 @@ label fla_grounds34:
             $ inhibition -=2
             $ reputation -=1
     return
-    
+
 label fla_grounds35:
-    
+
     scene bg fla_grounds35 with fade
-    "You spot a couple of your teachers carpooling. They must be in a hurry, thier still in uniform."
+    "You spot a couple of your teachers carpooling. They must be in a hurry, they're still in uniform."
     $ deviance +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds36:
-    
+
     scene bg fla_grounds36 with fade
-    "Your students seem to have grown used to the Naked Uniform rule. Best idea you ever had. EVER."
+    "Your students seem to have grown used to the Naked Uniform rule. Best idea you ever had."
+    "EVER."
     $ deviance +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds37:
-    
+
     scene bg fla_grounds37 with fade
-    "Some of the girls are getting quite agressive. This girls has practically pinned her boyfriend to the ground in her rush to relieve herself."
+    "Some of the girls are getting quite aggressive. This girl has practically pinned her boyfriend to the ground in her rush to relieve herself."
     $ deviance +=1
     $ inhibition -=1
     if renpy.random.randint(1, 4) == 1:
         $ deviance += 5
     return
-    
+
 label fla_grounds38:
-    
+
     scene bg fla_grounds38 with fade
-    "Looks like these girls didn't notice you taking a nap on the roof. You make sure to stay well hidden and enjoy the show as the two girls expertly finger eachothers pussys."
+    "Looks like these girls didn't notice you taking a nap on the roof. You make sure to stay well hidden and enjoy the show as the two girls expertly finger each others' pussies."
     $ deviance +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds39:
-    
+
     scene bg fla_grounds39 with fade
-    "This girl has embraced the Sexy Uniforms whole heartedly."
-    $ deviance +=1
+    "This girl has embraced the Sexy Uniforms wholeheartedly."
     $ inhibition -=1
     return
-    
+
 label fla_grounds40:
-    
+
     scene bg fla_grounds40 with fade
-    "Once you found out how many girls are going without panties these days you made sure that the floors were polished to a mirror sheen."
+    "Once you found out how many girls are going without panties these days, you made sure that the floors were polished to a mirror sheen."
     pov "So... beautiful."
     $ deviance +=1
     $ inhibition -=1
     return
-    
+
 label fla_grounds41:
-    
+
     scene bg fla_grounds41 with fade
-    "Riding a bike to school is a great way to stay in shape. And with a few simple add-ons can be alot of fun as well!"
+    "Riding a bike to school is a great way to stay in shape. With a few simple add-ons can be a lot of fun as well!"
     $ deviance +=1
     $ academics +=1
     $ athletics +=1

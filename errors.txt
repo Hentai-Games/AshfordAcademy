@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/characters/hina_amagi.rpy", line 88: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        $ event("hina_amagi_text1","act == 'class' and "hina_amagi_points > 10", event.once(), event.depends("hina_amagi_pool_opening"), priority=1)
+File "game/day_planner.rpy", line 54: Tab characters are not allowed in Ren'Py scripts.
+
+File "game/main.rpy", line 8: Tab characters are not allowed in Ren'Py scripts.
 
 Ren'Py Version: Ren'Py 6.99.1.329

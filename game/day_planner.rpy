@@ -38,10 +38,10 @@ init -100 python:
     dp_done_title = "Done Planning"
 
     # A map from period name to the information we know about that period.
-    __periods = { }
+    __periods = {}
 
     # The period we're updating.
-    __period = None
+    cPeriod = None
 
     class __Period(object):
 
@@ -51,24 +51,34 @@ init -100 python:
             self.acts = [ ]
 
     def dp_period(name, var):
-        __periods[name] = store.__period = __Period(name, var)
-
+        renpy.log("trying to create period:"+name)
+        if name in __periods:
+            raise Exception("Period '"+name+"' is already defined for act:'"+str(var)+"'")
+        __periods[name] = __Period(name, var)
+        renpy.log("period '"+name+"' created")
+        store.cPeriod = name
+        renpy.log("period name '"+name+"' stored in cPeriod: '"+cPeriod+"'")
     __None = object()
 
-    def dp_choice(name, value=__None, enable="True", show="True"):
-
-        if not __period:
-            raise Exception("Choices must be part of a defined period.")
+    def dp_choice(name, value=__None,period=__None, enable="True", show="True"):
+        renpy.log("trying to create choce:'"+name+"' for period:'"+str(period)+"' which has default value:'"+str(cPeriod)+"'")
+        if period is __None:
+            period = cPeriod
+        
+        if not period in __periods:
+            raise Exception("Choices must be part of a defined period. Period '"+str(period)+"' does not exist!")
 
         if value is __None:
             value = name
 
-        __period.acts.append((name, value, enable, show))
+        __periods[period].acts.append((name, value, enable, show))
 
     def __set_noncurried(var, value):
         setattr(store, var, value)
         return True
-
+    def dp_clear_periods():
+        __periods.clear()
+        
     __set = renpy.curry(__set_noncurried)
 
 

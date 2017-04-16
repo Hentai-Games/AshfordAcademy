@@ -72,7 +72,7 @@ init:
     # event.once() makes sure it only viewable once.event.depends("hina_amagi_in_class1") - this event must have been seen first.
 
     $ event("hina_amagi_in_class3", "act == 'class' and hina_amagi_points >= 15 and planning_day > 2", event.choose_one('class'), event.depends("hina_amagi_pool_opening"),priority=1)
-    $ event("hina_amagi_in_class4", "act == 'class' and hina_amagi_points >= 20 and planning_day < 5", event.choose_one('class'), event.depends("hina_amagi_in_class3"),priority=1)
+    $ event("hina_amagi_in_class4", "act == 'class' and hina_amagi_points >= 20 ", event.only(), event.depends("hina_amagi_in_class3"),priority=1)
 
     $ event("hina_amagi_pool_opening", "act == 'pool' and hina_amagi_points > 3", event.once(), event.only(), priority=1)
     $ event("hina_amagi_about_sexy_uniform", "act == 'office' and hina_amagi_points > 10 and uniform == 'sexy_uniform'", event.once(), event.only(), priority=1)
